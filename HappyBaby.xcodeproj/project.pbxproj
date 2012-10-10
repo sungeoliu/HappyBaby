@@ -24,6 +24,10 @@
 		E687F88316252D0200BA0AF0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F86216252D0100BA0AF0 /* CoreData.framework */; };
 		E687F88B16252D0200BA0AF0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E687F88916252D0200BA0AF0 /* InfoPlist.strings */; };
 		E687F88E16252D0200BA0AF0 /* HappyBabyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E687F88D16252D0200BA0AF0 /* HappyBabyTests.m */; };
+		E687F8E516255E8300BA0AF0 /* libLMLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F8E216255E6700BA0AF0 /* libLMLibrary.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		E687F8E816255EC700BA0AF0 /* ObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E687F8E716255EC700BA0AF0 /* ObjectManager.m */; };
+		E687F8EB1625620800BA0AF0 /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = E687F8EA1625620800BA0AF0 /* Object.m */; };
+		E687F8EF1625663E00BA0AF0 /* GameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E687F8EE1625663E00BA0AF0 /* GameEngine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +37,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = E687F85716252D0100BA0AF0;
 			remoteInfo = HappyBaby;
+		};
+		E687F8E116255E6700BA0AF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E687F8DA16255E6600BA0AF0 /* LMLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E687F8AF1625555700BA0AF0;
+			remoteInfo = LMLibrary;
+		};
+		E687F8E316255E7900BA0AF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E687F8DA16255E6600BA0AF0 /* LMLibrary.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E687F8AE1625555700BA0AF0;
+			remoteInfo = LMLibrary;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -58,6 +76,13 @@
 		E687F88A16252D0200BA0AF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E687F88C16252D0200BA0AF0 /* HappyBabyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HappyBabyTests.h; sourceTree = "<group>"; };
 		E687F88D16252D0200BA0AF0 /* HappyBabyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappyBabyTests.m; sourceTree = "<group>"; };
+		E687F8DA16255E6600BA0AF0 /* LMLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LMLibrary.xcodeproj; path = ../LMLibrary/LMLibrary.xcodeproj; sourceTree = "<group>"; };
+		E687F8E616255EC700BA0AF0 /* ObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectManager.h; sourceTree = "<group>"; };
+		E687F8E716255EC700BA0AF0 /* ObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectManager.m; sourceTree = "<group>"; };
+		E687F8E91625620800BA0AF0 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		E687F8EA1625620800BA0AF0 /* Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Object.m; sourceTree = "<group>"; };
+		E687F8ED1625663E00BA0AF0 /* GameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEngine.h; sourceTree = "<group>"; };
+		E687F8EE1625663E00BA0AF0 /* GameEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameEngine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E687F8E516255E8300BA0AF0 /* libLMLibrary.a in Frameworks */,
 				E687F85D16252D0100BA0AF0 /* UIKit.framework in Frameworks */,
 				E687F85F16252D0100BA0AF0 /* Foundation.framework in Frameworks */,
 				E687F86116252D0100BA0AF0 /* CoreGraphics.framework in Frameworks */,
@@ -89,6 +115,9 @@
 		E687F84D16252D0100BA0AF0 = {
 			isa = PBXGroup;
 			children = (
+				E687F8DA16255E6600BA0AF0 /* LMLibrary.xcodeproj */,
+				E687F89F162551BF00BA0AF0 /* DataStore */,
+				E687F8EC1625656500BA0AF0 /* GameControl */,
 				E687F86416252D0100BA0AF0 /* HappyBaby */,
 				E687F88616252D0200BA0AF0 /* HappyBabyTests */,
 				E687F85B16252D0100BA0AF0 /* Frameworks */,
@@ -122,7 +151,6 @@
 			children = (
 				E687F86D16252D0100BA0AF0 /* AppDelegate.h */,
 				E687F86E16252D0100BA0AF0 /* AppDelegate.m */,
-				E687F87616252D0100BA0AF0 /* HappyBaby.xcdatamodeld */,
 				E687F86516252D0100BA0AF0 /* Supporting Files */,
 			);
 			path = HappyBaby;
@@ -161,6 +189,35 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E687F89F162551BF00BA0AF0 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				E687F87616252D0100BA0AF0 /* HappyBaby.xcdatamodeld */,
+				E687F8E91625620800BA0AF0 /* Object.h */,
+				E687F8EA1625620800BA0AF0 /* Object.m */,
+				E687F8E616255EC700BA0AF0 /* ObjectManager.h */,
+				E687F8E716255EC700BA0AF0 /* ObjectManager.m */,
+			);
+			name = DataStore;
+			sourceTree = "<group>";
+		};
+		E687F8DB16255E6600BA0AF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E687F8E216255E6700BA0AF0 /* libLMLibrary.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E687F8EC1625656500BA0AF0 /* GameControl */ = {
+			isa = PBXGroup;
+			children = (
+				E687F8ED1625663E00BA0AF0 /* GameEngine.h */,
+				E687F8EE1625663E00BA0AF0 /* GameEngine.m */,
+			);
+			name = GameControl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,6 +232,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E687F8E416255E7900BA0AF0 /* PBXTargetDependency */,
 			);
 			name = HappyBaby;
 			productName = HappyBaby;
@@ -219,6 +277,12 @@
 			mainGroup = E687F84D16252D0100BA0AF0;
 			productRefGroup = E687F85916252D0100BA0AF0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E687F8DB16255E6600BA0AF0 /* Products */;
+					ProjectRef = E687F8DA16255E6600BA0AF0 /* LMLibrary.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				E687F85716252D0100BA0AF0 /* HappyBaby */,
@@ -226,6 +290,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E687F8E216255E6700BA0AF0 /* libLMLibrary.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libLMLibrary.a;
+			remoteRef = E687F8E116255E6700BA0AF0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E687F85616252D0100BA0AF0 /* Resources */ = {
@@ -273,6 +347,9 @@
 				E687F86B16252D0100BA0AF0 /* main.m in Sources */,
 				E687F86F16252D0100BA0AF0 /* AppDelegate.m in Sources */,
 				E687F87816252D0100BA0AF0 /* HappyBaby.xcdatamodeld in Sources */,
+				E687F8E816255EC700BA0AF0 /* ObjectManager.m in Sources */,
+				E687F8EB1625620800BA0AF0 /* Object.m in Sources */,
+				E687F8EF1625663E00BA0AF0 /* GameEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +368,11 @@
 			isa = PBXTargetDependency;
 			target = E687F85716252D0100BA0AF0 /* HappyBaby */;
 			targetProxy = E687F88416252D0200BA0AF0 /* PBXContainerItemProxy */;
+		};
+		E687F8E416255E7900BA0AF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LMLibrary;
+			targetProxy = E687F8E316255E7900BA0AF0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -336,7 +418,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = ../LMLibrary/LMLibrary/;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -359,6 +443,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -440,6 +525,7 @@
 				E687F89316252D0200BA0AF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E687F89416252D0200BA0AF0 /* Build configuration list for PBXNativeTarget "HappyBabyTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +534,7 @@
 				E687F89616252D0200BA0AF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -458,7 +545,8 @@
 				E687F87716252D0100BA0AF0 /* HappyBaby.xcdatamodel */,
 			);
 			currentVersion = E687F87716252D0100BA0AF0 /* HappyBaby.xcdatamodel */;
-			path = HappyBaby.xcdatamodeld;
+			name = HappyBaby.xcdatamodeld;
+			path = HappyBaby/HappyBaby.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
