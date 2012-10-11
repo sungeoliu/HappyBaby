@@ -7,18 +7,23 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeViewController.h"
 
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize homeViewController = _homeViewController;
+@synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    _homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    //self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = _homeViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
