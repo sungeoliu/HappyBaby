@@ -135,6 +135,8 @@
             [self.delegate performSelector:@selector(wrongAnswerForObject:) withObject:card];
         }
     }
+    
+    [self stopTimer];
 }
 
 @end
