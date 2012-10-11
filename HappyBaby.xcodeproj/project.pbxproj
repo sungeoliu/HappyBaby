@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CF87E5B1625530300C3D424 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF87E591625530300C3D424 /* HomeViewController.m */; };
+		3CF87E621625540600C3D424 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF87E611625540600C3D424 /* HomeViewController.xib */; };
+		3CF87E6A162559B900C3D424 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CF87E69162559B900C3D424 /* HomeViewController.xib */; };
 		E687F85D16252D0100BA0AF0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F85C16252D0100BA0AF0 /* UIKit.framework */; };
 		E687F85F16252D0100BA0AF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F85E16252D0100BA0AF0 /* Foundation.framework */; };
 		E687F86116252D0100BA0AF0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F86016252D0100BA0AF0 /* CoreGraphics.framework */; };
@@ -37,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3CF87E581625530300C3D424 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = Classes/HomeViewController.h; sourceTree = "<group>"; };
+		3CF87E591625530300C3D424 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = Classes/HomeViewController.m; sourceTree = "<group>"; };
+		3CF87E611625540600C3D424 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		3CF87E69162559B900C3D424 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = "Resouse-iPad/HomeViewController.xib"; sourceTree = "<group>"; };
 		E687F85816252D0100BA0AF0 /* HappyBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E687F85C16252D0100BA0AF0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E687F85E16252D0100BA0AF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,6 +93,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CF87E521625511D00C3D424 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3CF87E581625530300C3D424 /* HomeViewController.h */,
+				3CF87E591625530300C3D424 /* HomeViewController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		3CF87E5D1625534A00C3D424 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3CF87E5F162553A600C3D424 /* xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3CF87E5E1625536100C3D424 /* Resources-iPad */ = {
+			isa = PBXGroup;
+			children = (
+				3CF87E60162553B600C3D424 /* xib */,
+			);
+			name = "Resources-iPad";
+			sourceTree = "<group>";
+		};
+		3CF87E5F162553A600C3D424 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				3CF87E611625540600C3D424 /* HomeViewController.xib */,
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
+		3CF87E60162553B600C3D424 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				3CF87E69162559B900C3D424 /* HomeViewController.xib */,
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
 		E687F84D16252D0100BA0AF0 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +168,9 @@
 		E687F86416252D0100BA0AF0 /* HappyBaby */ = {
 			isa = PBXGroup;
 			children = (
+				3CF87E5E1625536100C3D424 /* Resources-iPad */,
+				3CF87E5D1625534A00C3D424 /* Resources */,
+				3CF87E521625511D00C3D424 /* Classes */,
 				E687F86D16252D0100BA0AF0 /* AppDelegate.h */,
 				E687F86E16252D0100BA0AF0 /* AppDelegate.m */,
 				E687F87616252D0100BA0AF0 /* HappyBaby.xcdatamodeld */,
@@ -236,6 +287,8 @@
 				E687F87116252D0100BA0AF0 /* Default.png in Resources */,
 				E687F87316252D0100BA0AF0 /* Default@2x.png in Resources */,
 				E687F87516252D0100BA0AF0 /* Default-568h@2x.png in Resources */,
+				3CF87E621625540600C3D424 /* HomeViewController.xib in Resources */,
+				3CF87E6A162559B900C3D424 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +326,7 @@
 				E687F86B16252D0100BA0AF0 /* main.m in Sources */,
 				E687F86F16252D0100BA0AF0 /* AppDelegate.m in Sources */,
 				E687F87816252D0100BA0AF0 /* HappyBaby.xcdatamodeld in Sources */,
+				3CF87E5B1625530300C3D424 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +390,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -357,7 +411,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -440,6 +494,7 @@
 				E687F89316252D0200BA0AF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E687F89416252D0200BA0AF0 /* Build configuration list for PBXNativeTarget "HappyBabyTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +503,7 @@
 				E687F89616252D0200BA0AF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
