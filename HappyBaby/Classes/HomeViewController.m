@@ -2,7 +2,7 @@
 //  HomeViewController.m
 //  HappyBaby
 //
-//  Created by lixiaoyu on 12-10-10.
+//  Created by maoyu on 12-10-10.
 //  Copyright (c) 2012年 Liu&Mao. All rights reserved.
 //
 
@@ -34,5 +34,22 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+}
+
+/*- (NSUInteger)supportedInterfaceOrientations
+{
+    //return UIInterfaceOrientationMaskLandscape;
+    return 0;
+}
+
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}*/
 
 @end
