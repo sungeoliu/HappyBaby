@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ObjectManager.h"
+#import "CardManager.h"
 
 @protocol GameEngineDelegate <NSObject>
 
@@ -15,12 +15,14 @@
 - (void)gotQuestion:(NSString *)question withVoice:(NSURL *)voice;
 - (void)wrongAnswerForObject:(NSNumber *)objectId;
 - (void)rightAnswerForObject:(NSNumber *)objectId;
-- (void)questionTimeout:(NSNumber *)objectId;
+- (void)anwserTimeout:(NSNumber *)objectId;
 
 @end
 
 
 @interface GameEngine : NSObject
+
+@property (nonatomic, strong) id<GameEngineDelegate> delegate;
 
 - (void)startGameWithAlbum:(AlbumType)albumType;
 - (void)stopGame;

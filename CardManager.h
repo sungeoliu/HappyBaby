@@ -18,7 +18,9 @@ typedef enum {
 
 @interface CardManager : BaseManager
 
-- (NSArray *)allObjectsInAlbum:(AlbumType) albumType;
++ (CardManager *)defaultManager;
+
+- (NSArray *)allCardsInAlbum:(AlbumType) albumType;
 
 - (BOOL)newObjectWithName:(NSString *)name inAlbum:(AlbumType)albumType;
 - (BOOL)modifyObject:(NSNumber *)objectId withImage:(UIImage *) image;

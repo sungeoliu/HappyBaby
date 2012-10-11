@@ -8,9 +8,20 @@
 
 #import "CardManager.h"
 
+static CardManager * sDefaultManager = nil;
+
 @implementation CardManager
 
-- (NSArray *)allObjectsInAlbum:(AlbumType)albumType{
+// Singleton interface.
++ (CardManager *)defaultManager{
+    if (sDefaultManager == nil) {
+        sDefaultManager = [[CardManager alloc] init];
+    }
+    
+    return sDefaultManager;
+}
+
+- (NSArray *)allCardsInAlbum:(AlbumType)albumType{
     NSFetchRequest * request = [[NSFetchRequest alloc] initWithEntityName:kCardEntity];
     
     // condition.
