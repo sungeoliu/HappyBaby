@@ -7,6 +7,7 @@
 //
 
 #import "CardManager.h"
+#import "DocumentManager.h"
 
 static CardManager * sDefaultManager = nil;
 
@@ -43,7 +44,7 @@ static CardManager * sDefaultManager = nil;
     return mutableFetchResult;
 }
 
-- (BOOL)newObjectWithName:(NSString *)name inAlbum:(AlbumType)albumType{
+- (BOOL)newCardWithName:(NSString *)name inAlbum:(AlbumType)albumType{
     Card * card = (Card *)[NSEntityDescription insertNewObjectForEntityForName:kCardEntity inManagedObjectContext:self.managedObjectContext];
     card.id = [BaseManager generateIdForKey:kCardEntity];
     card.albumId = [NSNumber numberWithInteger:albumType];
@@ -55,14 +56,31 @@ static CardManager * sDefaultManager = nil;
     return YES;
 }
 
-- (BOOL)modifyObject:(NSNumber *)objectId withImage:(UIImage *)image{
-    // TODO
+- (BOOL)modifyCard:(Card *)card withImage:(UIImage *)image{
+    DocumentManager * documentManager = [DocumentManager defaultManager];
+    if (card.image == nil) {
+        // image not exist, create a proper name for the image and save it.
+        NSURL * storagePath = [documentManager pathForRandomImageWithSuffix:@"png"];
+        [documentManager saveImage:image toURL:storagePath];
+        
+        card.image = [storagePath absoluteString];
+        [super synchroniseToStore];// TODO does this help?
+    }else{
+        // image already exist, occpy the old one.
+        [documentManager saveImage:image toURL:[NSURL URLWithString:card.image]];
+    }
     return NO;
 }
 
-- (BOOL)modifyObject:(NSNumber *)objectId withPronunciation:(NSURL *)url{
-    // TODO
+- (BOOL)modifyCard:(Card *)card withPronunciation:(NSURL *)url{
+    card.pronunciation = [url absoluteString];
+    [self synchroniseToStore];
     return NO;
+}
+
+- (NSURL *)newSoundUrl{
+    DocumentManager * manager = [DocumentManager defaultManager];
+    return [manager pathForRandomSoundWithSuffix:@"wav"];
 }
 
 @end
