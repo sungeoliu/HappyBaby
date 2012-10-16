@@ -28,16 +28,21 @@
 @implementation GameEngine
 @synthesize delegate = _delegate;
 
-- (BOOL)generateQuestionOrderTableWithLength:(NSInteger)length{
-    // initialize order table;
+- (void)initQuestionOrderTableWithLength:(NSInteger)length{
     if (_questionOrderTable != nil) {
         free(_questionOrderTable);
     }
-
-    _questionOrderTable = (u_int8_t *)malloc(_cards.count);
+    
+    // fullfill table with ordered number.
+    _questionOrderTable = (u_int8_t *)malloc(length);
     for (int i = 0; i < length; i++) {
         _questionOrderTable[i] = i;
     }
+}
+
+- (BOOL)generateQuestionOrderTableWithLength:(NSInteger)length{
+    // initialize order table;
+    [self initQuestionOrderTableWithLength:length];
 
     // generate chaos-maker table.
     u_int8_t * bytes = (u_int8_t *)malloc(length);
@@ -46,6 +51,7 @@
         return NO;
     }
 
+    // using chaos-maker to disorder questionOrderTable.
     u_int8_t tmp;
     for (int i = 0 ; i < length; i ++) {
         bytes[i] = bytes[i] % length;
