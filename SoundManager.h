@@ -20,4 +20,7 @@
 - (void)playBackgroundSound;
 - (void)stopBackgroundSound;
 
+- (void)recordSound:(NSURL *)sound;
+- (void)stopRecordSound;
+
 @end
