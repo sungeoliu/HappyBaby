@@ -9,7 +9,7 @@
 #import "BaseGameViewController.h"
 #import "GameEngine.h"
 
-@interface QuestionModeGameViewController : BaseGameViewController<GameEngineDelegate>
+@interface QuestionModeGameViewController : BaseGameViewController<GameEngineDelegate,UIAlertViewDelegate>
 
 @property(weak, nonatomic) IBOutlet UIButton * button1;
 @property(weak, nonatomic) IBOutlet UIButton * button2;
@@ -25,7 +25,6 @@
 @property(weak, nonatomic) IBOutlet UILabel * label6;
 @property(weak, nonatomic) IBOutlet UILabel * labelInfo;
 
-- (IBAction)back:(id)sender;
 - (IBAction)checkAnswer:(UIButton *)sender;
 
 @end

@@ -9,8 +9,6 @@
 #import "QuestionModeGameViewController.h"
 #import "SoundManager.h"
 
-#define kCardSize  6
-
 @interface QuestionModeGameViewController () {
     GameEngine * _gameEngine;
     SoundManager * _soundManager;
@@ -21,6 +19,28 @@
 @implementation QuestionModeGameViewController
 
 #pragma 私有函数
+- (void)showAlert {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请进行设置数据" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+
+}
+// 检查卡片图片、录音是否进行设置
+- (BOOL)checkCards {
+    if (nil == self.cards) {
+        NSInteger count = self.cards.count;
+        Card * card;
+        for (NSInteger index = 0; index < count; index++) {
+            card = [self.cards objectAtIndex:index];
+            if (nil == card.image || nil == card.pronunciation) {
+                [self showAlert];
+                return NO;
+            }
+        }
+    }
+    
+    return YES;
+}
+
 - (void)initView {
     if (nil != self.cards && self.cards.count == kCardSize) {
         Card * card = [self.cards objectAtIndex:0];
@@ -82,19 +102,22 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    //[self initView];
-    [self registerHandleMessage];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    //[_gameEngine startGameWithAlbum:self.albumType];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [_soundManager playBackgroundSound];
-    //[_gameEngine newQuestion];
+    if ([self checkCards]) {
+        [self initView];
+        //[_gameEngine startGameWithAlbum:self.albumType];
+        [_soundManager playBackgroundSound];
+        //[_gameEngine newQuestion];
+    }
+    
+    [self registerHandleMessage];
 }
 
 - (void)didReceiveMemoryWarning
@@ -137,6 +160,13 @@
 - (void)anwserTimeout:(NSNumber *)objectId {
     self.answerState = AnswerStateTimeout;
     // TODO 播放提示的声音
+}
+
+#pragma AlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == alertView.cancelButtonIndex) {
+        [self back:nil];
+    }
 }
 
 @end
