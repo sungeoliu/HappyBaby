@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6794D15162D032300B7A986 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6794D14162D032300B7A986 /* Add@2x.png */; };
 		E687F85D16252D0100BA0AF0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F85C16252D0100BA0AF0 /* UIKit.framework */; };
 		E687F85F16252D0100BA0AF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F85E16252D0100BA0AF0 /* Foundation.framework */; };
 		E687F86116252D0100BA0AF0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F86016252D0100BA0AF0 /* CoreGraphics.framework */; };
@@ -29,6 +30,8 @@
 		E687F8EF1625663E00BA0AF0 /* GameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E687F8EE1625663E00BA0AF0 /* GameEngine.m */; };
 		E687F9121626AC2F00BA0AF0 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = E687F9111626AC2F00BA0AF0 /* Card.m */; };
 		E687F9141626B97A00BA0AF0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F9131626B97A00BA0AF0 /* Security.framework */; };
+		E687F91F162C0C4100BA0AF0 /* CardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E687F8E716255EC700BA0AF0 /* CardManager.m */; };
+		E687F920162C0C5A00BA0AF0 /* libLMLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F8E216255E6700BA0AF0 /* libLMLibrary.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +56,17 @@
 			remoteGlobalIDString = E687F8AE1625555700BA0AF0;
 			remoteInfo = LMLibrary;
 		};
+		E687F921162C0FA000BA0AF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E687F84F16252D0100BA0AF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E687F87D16252D0200BA0AF0;
+			remoteInfo = HappyBabyTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E6794D14162D032300B7A986 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
 		E687F85816252D0100BA0AF0 /* HappyBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E687F85C16252D0100BA0AF0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E687F85E16252D0100BA0AF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -105,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E687F920162C0C5A00BA0AF0 /* libLMLibrary.a in Frameworks */,
 				E687F88016252D0200BA0AF0 /* SenTestingKit.framework in Frameworks */,
 				E687F88116252D0200BA0AF0 /* UIKit.framework in Frameworks */,
 				E687F88216252D0200BA0AF0 /* Foundation.framework in Frameworks */,
@@ -177,6 +189,7 @@
 		E687F88616252D0200BA0AF0 /* HappyBabyTests */ = {
 			isa = PBXGroup;
 			children = (
+				E6794D14162D032300B7A986 /* Add@2x.png */,
 				E687F88C16252D0200BA0AF0 /* HappyBabyTests.h */,
 				E687F88D16252D0200BA0AF0 /* HappyBabyTests.m */,
 				E687F88716252D0200BA0AF0 /* Supporting Files */,
@@ -236,6 +249,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E687F922162C0FA000BA0AF0 /* PBXTargetDependency */,
 				E687F8E416255E7900BA0AF0 /* PBXTargetDependency */,
 			);
 			name = HappyBaby;
@@ -322,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E687F88B16252D0200BA0AF0 /* InfoPlist.strings in Resources */,
+				E6794D15162D032300B7A986 /* Add@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E687F91F162C0C4100BA0AF0 /* CardManager.m in Sources */,
 				E687F88E16252D0200BA0AF0 /* HappyBabyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +393,11 @@
 			isa = PBXTargetDependency;
 			name = LMLibrary;
 			targetProxy = E687F8E316255E7900BA0AF0 /* PBXContainerItemProxy */;
+		};
+		E687F922162C0FA000BA0AF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E687F87D16252D0200BA0AF0 /* HappyBabyTests */;
+			targetProxy = E687F921162C0FA000BA0AF0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -489,6 +510,7 @@
 				INFOPLIST_FILE = "HappyBabyTests/HappyBabyTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -506,6 +528,7 @@
 				INFOPLIST_FILE = "HappyBabyTests/HappyBabyTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
