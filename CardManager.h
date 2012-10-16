@@ -12,7 +12,7 @@
 #define kCardEntity    @"Card"
 
 typedef enum {
-    AlbumTypeFamily,
+    AlbumTypeFamily = 1,
     AlbumTypeAnimal
 }AlbumType;
 
@@ -21,6 +21,7 @@ typedef enum {
 + (CardManager *)defaultManager;
 
 - (NSArray *)allCardsInAlbum:(AlbumType) albumType;
+- (Card *)cardWithName:(NSString *)name inAlbum:(AlbumType)album;
 
 - (BOOL)newCardWithName:(NSString *)name inAlbum:(AlbumType)albumType;
 - (BOOL)modifyCard:(Card *)card withImage:(UIImage *) image;
