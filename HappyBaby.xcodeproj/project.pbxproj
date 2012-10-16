@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C0CE260162BF6D100E86063 /* CardAudioRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0CE25E162BF6D000E86063 /* CardAudioRecordViewController.m */; };
+		3C0CE261162BF6D100E86063 /* CardAudioRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE25F162BF6D100E86063 /* CardAudioRecordViewController.xib */; };
 		3C475A691628F5D40027A4FD /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C475A681628F5D40027A4FD /* backgroundMusic.mp3 */; };
+		3C475A6D1628FB540027A4FD /* CardManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C475A6B1628FB540027A4FD /* CardManagerViewController.m */; };
+		3C475A6E1628FB540027A4FD /* CardManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C475A6C1628FB540027A4FD /* CardManagerViewController.xib */; };
 		3CD731261627F32D000432BD /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD731251627F32D000432BD /* SoundManager.m */; };
 		3CD731281627F35C000432BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD731271627F35C000432BD /* AVFoundation.framework */; };
 		3CD731321627F4B3000432BD /* BaseGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7312D1627F4B3000432BD /* BaseGameViewController.m */; };
@@ -66,7 +70,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C0CE25D162BF6D000E86063 /* CardAudioRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAudioRecordViewController.h; sourceTree = "<group>"; };
+		3C0CE25E162BF6D000E86063 /* CardAudioRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAudioRecordViewController.m; sourceTree = "<group>"; };
+		3C0CE25F162BF6D100E86063 /* CardAudioRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardAudioRecordViewController.xib; path = HappyBaby/CardAudioRecordViewController.xib; sourceTree = "<group>"; };
 		3C475A681628F5D40027A4FD /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		3C475A6A1628FB540027A4FD /* CardManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardManagerViewController.h; sourceTree = "<group>"; };
+		3C475A6B1628FB540027A4FD /* CardManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardManagerViewController.m; sourceTree = "<group>"; };
+		3C475A6C1628FB540027A4FD /* CardManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardManagerViewController.xib; path = HappyBaby/CardManagerViewController.xib; sourceTree = "<group>"; };
 		3CD731241627F32D000432BD /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
 		3CD731251627F32D000432BD /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
 		3CD731271627F35C000432BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -171,6 +181,8 @@
 		3CD7312A1627F3FF000432BD /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				3C0CE25F162BF6D100E86063 /* CardAudioRecordViewController.xib */,
+				3C475A6C1628FB540027A4FD /* CardManagerViewController.xib */,
 				3CD731471627F656000432BD /* HomeViewController.xib */,
 				3CD731361627F4D5000432BD /* QuestionModeGameViewController.xib */,
 			);
@@ -186,6 +198,10 @@
 				3CD7312F1627F4B3000432BD /* HomeViewController.m */,
 				3CD731301627F4B3000432BD /* QuestionModeGameViewController.h */,
 				3CD731311627F4B3000432BD /* QuestionModeGameViewController.m */,
+				3C475A6A1628FB540027A4FD /* CardManagerViewController.h */,
+				3C475A6B1628FB540027A4FD /* CardManagerViewController.m */,
+				3C0CE25D162BF6D000E86063 /* CardAudioRecordViewController.h */,
+				3C0CE25E162BF6D000E86063 /* CardAudioRecordViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -407,6 +423,8 @@
 				3CD731461627F5FD000432BD /* mother.png in Resources */,
 				3CD731481627F656000432BD /* HomeViewController.xib in Resources */,
 				3C475A691628F5D40027A4FD /* backgroundMusic.mp3 in Resources */,
+				3C475A6E1628FB540027A4FD /* CardManagerViewController.xib in Resources */,
+				3C0CE261162BF6D100E86063 /* CardAudioRecordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +469,8 @@
 				3CD731321627F4B3000432BD /* BaseGameViewController.m in Sources */,
 				3CD731331627F4B3000432BD /* HomeViewController.m in Sources */,
 				3CD731341627F4B3000432BD /* QuestionModeGameViewController.m in Sources */,
+				3C475A6D1628FB540027A4FD /* CardManagerViewController.m in Sources */,
+				3C0CE260162BF6D100E86063 /* CardAudioRecordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
