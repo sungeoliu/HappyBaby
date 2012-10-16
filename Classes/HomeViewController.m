@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "QuestionModeGameViewController.h"
+#import "CardManagerViewController.h"
 
 @interface HomeViewController ()
 
@@ -46,9 +47,28 @@
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationLandscapeLeft;
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscape;
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
 - (IBAction)startGame:(UIButton *)sender {
     QuestionModeGameViewController * viewController = [[QuestionModeGameViewController alloc] initWithNibName:@"QuestionModeGameViewController" bundle:nil];
     viewController.albumType = AlbumTypeFamily;
     [self.navigationController pushViewController:viewController animated:YES];
 }
+
+- (IBAction)setCard:(UIButton *)sender {
+    CardManagerViewController * viewController = [[CardManagerViewController alloc] initWithNibName:@"CardManagerViewController" bundle:nil];
+    viewController.albumType = AlbumTypeFamily;
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 @end

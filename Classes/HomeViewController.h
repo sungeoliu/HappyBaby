@@ -11,5 +11,5 @@
 @interface HomeViewController : UIViewController
 
 - (IBAction)startGame:(UIButton *)sender;
-
+- (IBAction)setCard:(UIButton *)sender;
 @end
