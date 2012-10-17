@@ -14,6 +14,7 @@
     uint8_t * _questionOrderTable;
     NSInteger _questionOrderIndex;
     NSTimer * _questionTimer;
+    NSInteger _countDownSeconds;
 }
 
 @end
@@ -85,10 +86,10 @@
 - (void)startTimerForCard:(Card *)card{
     [self stopTimer];
 
-    NSInteger timeInterval = self.answerQuestionTimerInterval == 0 ? 5 : self.answerQuestionTimerInterval;
-    _questionTimer = [NSTimer scheduledTimerWithTimeInterval:timeInterval
+    _countDownSeconds = self.answerQuestionTimerInterval == 0 ? 5 : self.answerQuestionTimerInterval;
+    _questionTimer = [NSTimer scheduledTimerWithTimeInterval:1
                                                       target:self
-                                                    selector:@selector(timeout:) userInfo:card.id repeats:NO];
+                                                    selector:@selector(timeout:) userInfo:card.id repeats:YES];
 }
 
 - (void)stopTimer{
@@ -100,13 +101,23 @@
 }
 
 - (void)timeout:(NSTimer *)timer{
-    if (self.delegate != nil) {
-        if ([self.delegate respondsToSelector:@selector(answerTimeout:)]) {
-            [self.delegate performSelector:@selector(answerTimeout:) withObject:timer.userInfo];
+    _countDownSeconds --;
+    
+    if (_countDownSeconds == 0) {
+        if (self.delegate != nil) {
+            if ([self.delegate respondsToSelector:@selector(answerTimeout:)]) {
+                [self.delegate performSelector:@selector(answerTimeout:) withObject:timer.userInfo];
+            }
+        }
+        
+        [self stopTimer];
+    }else{
+        if (self.delegate != nil) {
+            if ([self.delegate respondsToSelector:@selector(questionTimerCountdown:)]) {
+                [self.delegate performSelector:@selector(questionTimerCountdown:) withObject:[NSNumber numberWithInteger:_countDownSeconds]];
+            }
         }
     }
-    
-    [self stopTimer];
     
     NSLog(@"question timeout");
 }
@@ -156,7 +167,7 @@
         }
     }
     
-    [self stopTimer];
+//    [self stopTimer];回答失败时继续计时，直到定时器超时。
 }
 
 @end

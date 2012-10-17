@@ -16,6 +16,7 @@
 - (void)wrongAnswerForObject:(NSNumber *)objectId;
 - (void)rightAnswerForObject:(NSNumber *)objectId;
 - (void)answerTimeout:(NSNumber *)objectId;
+- (void)questionTimerCountdown:(NSNumber *) secondsLeft;
 
 @end
 
