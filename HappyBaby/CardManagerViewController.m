@@ -9,9 +9,11 @@
 #import "CardManagerViewController.h"
 #import "CardAudioRecordViewController.h"
 #import "Card.h"
+#import "CardManager.h"
 
 @interface CardManagerViewController () {
     NSNumber * _curSelectCardIndex;
+    CardManager * _cardManager;
 }
 
 @end
@@ -25,12 +27,20 @@
         UIImageView * imageView;
         UILabel * label;
         Card * card;
+        UIImage * image;
+        NSURL * url;
+        NSData * data;
         for (NSInteger index = 0; index < count; index++) {
             imageView = (UIImageView *)[self.view viewWithTag:kImageViewTagOrigin + index];
             label = (UILabel *)[self.view viewWithTag:kLabelTagOrigin + index];
-            //FIMX 获取图片
             card = [self.cards objectAtIndex:index];
-            //imageView setImage:<#(UIImage *)#>
+            if (nil != card.image) {
+                url = [[NSURL alloc] initWithString:card.image];
+                data = [NSData dataWithContentsOfURL:url];
+                image = [UIImage imageWithData:data];
+                [imageView setImage:image];
+            }
+            
             label.text = card.name;
         }
     }
@@ -59,10 +69,13 @@
 - (void)showCardAudioRecordView {
     CardAudioRecordViewController * viewController = [[CardAudioRecordViewController alloc] initWithNibName:@"CardAudioRecordViewController" bundle:nil];
     
+    Card * card = [self.cards objectAtIndex:[_curSelectCardIndex integerValue]];
+    viewController.card = card;
+
     CGRect fream = CGRectMake(50.0, 50.0, 350.0, 200.0);
     viewController.view.frame = fream;
     viewController.view.alpha = 0.8;
-    
+        
     [self.view addSubview:viewController.view];
     [self addChildViewController:viewController];
 }
@@ -80,7 +93,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _cardManager = [CardManager defaultManager];
     // Do any additional setup after loading the view from its nib.
+    [self initView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,6 +110,7 @@
 }
 
 - (IBAction)modifyAudio:(UIButton *)sender {
+    _curSelectCardIndex = [NSNumber numberWithInteger:sender.tag];
     [self showCardAudioRecordView];
 }
 
@@ -132,12 +148,13 @@
 }
 
 #pragma mark - ImagePicker delegate
-// FIMX 保存图片
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage * image =  [info valueForKey:UIImagePickerControllerEditedImage];
     UIImageView * imageView =  (UIImageView *)[self.view viewWithTag:[_curSelectCardIndex integerValue] + kImageViewTagOrigin];
     [imageView setImage:image];
+    Card * card = [self.cards objectAtIndex:[_curSelectCardIndex integerValue]];
+    [_cardManager modifyCard:card withImage:image];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
