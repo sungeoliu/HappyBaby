@@ -11,6 +11,11 @@
 #import <AVFoundation/AVFoundation.h>
 
 #define kSoundPlaySuccessMessage  @"kSoundPlaySuccess"
+typedef enum {
+    SystemSoundReady = 0,
+    SystemSoundRight = 1,
+    SystemSoundWrong = 2
+}SystemSound;
 
 @interface SoundManager : NSObject <AVAudioPlayerDelegate>
 
@@ -22,5 +27,7 @@
 
 - (void)recordSound:(NSURL *)sound;
 - (void)stopRecordSound;
+
+- (void)playSystemSound:(SystemSound) sound;
 
 @end

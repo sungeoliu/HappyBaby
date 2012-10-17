@@ -14,6 +14,7 @@ static SoundManager *sSoundManager;
     AVAudioPlayer * _backgroundAudioPlayer;
     AVAudioPlayer * _audioPlayer;
     AVAudioRecorder * _audioRecorder;
+    NSArray * _systemSoundsArray;
 }
 @end
 
@@ -27,16 +28,12 @@ static SoundManager *sSoundManager;
     return sSoundManager;
 }
 
-- (NSString *) documentsPath {
-    NSString * path;
-    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    path = [searchPaths objectAtIndex: 0];
+- (id)init{
+    if (self = [super init]) {
+        _systemSoundsArray = [[NSArray alloc] initWithObjects:@"ready",@"right",@"wrong",nil];
+    }
     
-    return path;
-}
-
-- (NSString *)filePath:(NSString *)fileName {
-    return [[self documentsPath] stringByAppendingPathComponent:fileName];
+    return self;
 }
 
 - (void)playSound:(NSURL *)sound {
@@ -99,6 +96,13 @@ static SoundManager *sSoundManager;
         [_audioRecorder stop];
         _audioRecorder = nil;
     }
+}
+
+- (void)playSystemSound:(SystemSound) sound {
+    NSString * fineName = [_systemSoundsArray objectAtIndex:sound];
+    NSURL * url = [[NSBundle mainBundle] URLForResource: fineName 
+                                         withExtension: @"mp3"];
+    [self playSound:url];
 }
 
 #pragma AVAudioPlayerDelegate
