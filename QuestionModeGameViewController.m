@@ -43,23 +43,36 @@
 
 - (void)initView {
     if (nil != self.cards && self.cards.count == kCardSize) {
+        UIImage * image;
         Card * card = [self.cards objectAtIndex:0];
         _button1.tag = [card.id integerValue];
+        image = [[UIImage alloc] initWithContentsOfFile:card.image];
+        [_button1 setBackgroundImage:image forState:UIControlStateNormal];
         _label1.text = card.name;
         card = [self.cards objectAtIndex:1];
         _button2.tag = [card.id integerValue];
+        image = [[UIImage alloc] initWithContentsOfFile:card.image];
+        [_button2 setBackgroundImage:image forState:UIControlStateNormal];
         _label2.text = card.name;
         card = [self.cards objectAtIndex:2];
         _button3.tag = [card.id integerValue];
+        image = [[UIImage alloc] initWithContentsOfFile:card.image];
+        [_button3 setBackgroundImage:image forState:UIControlStateNormal];
         _label3.text = card.name;
         card = [self.cards objectAtIndex:3];
         _button4.tag = [card.id integerValue];
+        image = [[UIImage alloc] initWithContentsOfFile:card.image];
+        [_button4 setBackgroundImage:image forState:UIControlStateNormal];
         _label4.text = card.name;
         card = [self.cards objectAtIndex:4];
         _button5.tag = [card.id integerValue];
+        image = [[UIImage alloc] initWithContentsOfFile:card.image];
+        [_button5 setBackgroundImage:image forState:UIControlStateNormal];
         _label5.text = card.name;
         card = [self.cards objectAtIndex:5];
         _button6.tag = [card.id integerValue];
+        image = [[UIImage alloc] initWithContentsOfFile:card.image];
+        [_button6 setBackgroundImage:image forState:UIControlStateNormal];
         _label6.text = card.name;
     }
 }
@@ -78,9 +91,12 @@
     switch (self.answerState) {
         case AnswerStateRight:
         case AnswerStateTimeout:
+        case AnswerStateWrong:
             [_gameEngine newQuestion];
             break;
-            
+        case AnswerStateReady:
+            [_gameEngine startGameWithAlbum:self.albumType];
+            [_gameEngine newQuestion];
         default:
             break;
     }
@@ -112,9 +128,9 @@
     [super viewDidAppear:animated];
     if ([self checkCards]) {
         [self initView];
-        //[_gameEngine startGameWithAlbum:self.albumType];
+        self.answerState = AnswerStateReady;
+        [_soundManager playSystemSound:SystemSoundReady];
         [_soundManager playBackgroundSound];
-        //[_gameEngine newQuestion];
     }
     
     [self registerHandleMessage];
@@ -135,31 +151,35 @@
 }
 
 - (IBAction)checkAnswer:(UIButton *)sender {
-    //[_gameEngine checkAnswer:[NSNumber numberWithInteger:sender.tag]];
-    [self shakeWithButtonTag:[NSNumber numberWithInteger:sender.tag]];
+    [_gameEngine checkAnswer:[NSNumber numberWithInteger:sender.tag]];
 }
 
 #pragma GameEngineDelegate
 - (void)gotQuestion:(NSString *)question withVoice:(NSURL *)voice {
-    self.labelInfo.text = question;
+    if (nil != question) {
+        [self.labelInfo setText:question];
+    }
+    
     self.answerState = AnswerStateWait;
     [_soundManager playSound:voice];
 }
 
 - (void)rightAnswerForObject:(NSNumber *)objectId {
     self.answerState = AnswerStateRight;
-    // TODO 播放奖励的声音
+    [_soundManager playSystemSound:SystemSoundRight];
 }
 
 - (void)wrongAnswerForObject:(NSNumber *)objectId {
     [self shakeWithButtonTag:objectId];
     self.answerState = AnswerStateWrong;
-    [_gameEngine newQuestion];
+    [_soundManager playSystemSound:SystemSoundWrong];
+    [self shakeWithButtonTag:objectId];
 }
 
 - (void)anwserTimeout:(NSNumber *)objectId {
     self.answerState = AnswerStateTimeout;
-    // TODO 播放提示的声音
+    [_soundManager playSystemSound:SystemSoundWrong];
+    [self shakeWithButtonTag:objectId];
 }
 
 #pragma AlertViewDelegate
