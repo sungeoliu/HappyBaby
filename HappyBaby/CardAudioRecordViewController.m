@@ -8,9 +8,12 @@
 
 #import "CardAudioRecordViewController.h"
 #import "SoundManager.h"
+#import "CardManager.h"
 
 @interface CardAudioRecordViewController () {
     SoundManager * _soundManager;
+    CardManager * _cardManager;
+    NSURL * _url;
 }
 
 @end
@@ -33,6 +36,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _soundManager = [SoundManager defaultManager];
+    _cardManager = [CardManager defaultManager];
+    if (nil != _card.pronunciation) {
+        _url = [[NSURL alloc] initWithString:_card.pronunciation];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,15 +51,14 @@
 // FIMX 获取URL地址
 - (IBAction)playSound:(UIButton *)sender {
     if (nil != _card) {
-        // TODO 根据URL播放声音
-        //_soundManager playSound:<#(NSURL *)#>
+        [_soundManager playSound:_url];
     }
 }
 
 // FIMX 获取URL地址
 - (IBAction)recordSound:(UIButton *)sender {
-    //获取URL地址
-    //_soundManager recordSound:<#(NSURL *)#>;
+    _url = [_cardManager newSoundUrl];
+    [_soundManager recordSound:_url];
 }
 
 - (IBAction)stopRecordSound:(UIButton *)sender {
@@ -61,7 +67,7 @@
 
 // FIMX 保存数据库
 - (IBAction)save:(UIButton *)sender {
-    
+    [_cardManager modifyCard:_card withPronunciation:_url];
 }
 
 - (IBAction)close:(UIButton *)sender {

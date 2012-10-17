@@ -11,7 +11,7 @@
 
 @interface CardAudioRecordViewController : UIViewController
 
-@property (weak, nonatomic) Card * card;
+@property (strong, nonatomic) Card * card;
 
 - (IBAction)recordSound:(UIButton *)sender;
 - (IBAction)stopRecordSound:(UIButton *)sender;
