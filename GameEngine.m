@@ -103,6 +103,12 @@
 - (void)timeout:(NSTimer *)timer{
     _countDownSeconds --;
     
+    if (self.delegate != nil) {
+        if ([self.delegate respondsToSelector:@selector(questionTimerCountdown:)]) {
+            [self.delegate performSelector:@selector(questionTimerCountdown:) withObject:[NSNumber numberWithInteger:_countDownSeconds]];
+        }
+    }
+    
     if (_countDownSeconds == 0) {
         if (self.delegate != nil) {
             if ([self.delegate respondsToSelector:@selector(answerTimeout:)]) {
@@ -111,12 +117,6 @@
         }
         
         [self stopTimer];
-    }else{
-        if (self.delegate != nil) {
-            if ([self.delegate respondsToSelector:@selector(questionTimerCountdown:)]) {
-                [self.delegate performSelector:@selector(questionTimerCountdown:) withObject:[NSNumber numberWithInteger:_countDownSeconds]];
-            }
-        }
     }
     
     NSLog(@"question timeout");
