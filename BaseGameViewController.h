@@ -10,6 +10,7 @@
 #import "CardManager.h"
 
 typedef enum {
+    AnswerStateReady,
     AnswerStateWait,
     AnswerStateTimeout,
     AnswerStateRight,
@@ -22,7 +23,7 @@ typedef enum {
 
 @interface BaseGameViewController : UIViewController
 
-@property (weak, nonatomic)  NSArray * cards;
+@property (strong, nonatomic)  NSArray * cards;
 @property (nonatomic) AlbumType albumType;
 @property (nonatomic) AnswerState answerState;
 
