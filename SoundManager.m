@@ -45,7 +45,7 @@ static SoundManager *sSoundManager;
     _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:sound error:&error];
     _audioPlayer.delegate = self;
     _audioPlayer.numberOfLoops  = 0;
-    _audioPlayer.volume = 0.5;
+    _audioPlayer.volume = 1;
     if(nil != _audioPlayer) {
         [_audioPlayer play];
     }
