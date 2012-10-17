@@ -8,6 +8,7 @@
 
 #import "HappyBabyTests.h"
 #import "CardManager.h"
+#import "GameEngine.h"
 
 @interface HappyBabyTests(){
     CardManager * cardManager;
@@ -40,24 +41,40 @@
     [super tearDown];
 }
 
-- (void)testCardCreation{
-    NSArray * cards = [cardManager allCardsInAlbum:AlbumTypeFamily];
-    STAssertNotNil(cards, @"no cards in AlbumTypeAnimal");
-    NSLog(@"card number: %d", cards.count);
-//    BOOL result = [cardManager newCardWithName:@"laolao" inAlbum:AlbumTypeFamily];
-//    STAssertTrue(result, @"create laolao failed");
-}
+//- (void)testCardCreation{
+//    NSArray * cards = [cardManager allCardsInAlbum:AlbumTypeFamily];
+//    STAssertNotNil(cards, @"no cards in AlbumTypeAnimal");
+//    NSLog(@"card number: %d", cards.count);
+////    BOOL result = [cardManager newCardWithName:@"laolao" inAlbum:AlbumTypeFamily];
+////    STAssertTrue(result, @"create laolao failed");
+//}
+//
+//- (void)testCardModification{
+//    Card * card = [cardManager cardWithName:@"laolao" inAlbum:AlbumTypeFamily];
+//    STAssertNotNil(card, @"card -laolao- not exist");
+//    
+//    BOOL result = [cardManager modifyCard:card withImage:image];
+//    STAssertTrue(result, @"modify card image");
+//    
+//    NSURL * randomSoundPath = [cardManager newSoundUrl];
+//    STAssertNotNil(randomSoundPath, @"random sound path");
+//    NSLog(@"sound URL: %@", [randomSoundPath absoluteString]);
+//}
 
-- (void)testCardModification{
-    Card * card = [cardManager cardWithName:@"laolao" inAlbum:AlbumTypeFamily];
-    STAssertNotNil(card, @"card -laolao- not exist");
+- (void)testGameEngine{
+    NSArray * family = [NSArray arrayWithObjects:@"laolao", @"laoye", @"nainai", @"yeye", @"mama", @"baba", nil];
     
-    BOOL result = [cardManager modifyCard:card withImage:image];
-    STAssertTrue(result, @"modify card image");
+    for (int i = 0; i < family.count; i++) {
+        BOOL ret = [cardManager newCardWithName:[family objectAtIndex:i] inAlbum:AlbumTypeFamily];
+        STAssertTrue(ret, nil);
+    }
     
-    NSURL * randomSoundPath = [cardManager newSoundUrl];
-    STAssertNotNil(randomSoundPath, @"random sound path");
-    NSLog(@"sound URL: %@", [randomSoundPath absoluteString]);
+    GameEngine * engine = [[GameEngine alloc] init];
+    [engine startGameWithAlbum:AlbumTypeFamily];
+    
+    for (int i = 0; i < 20; i++) {
+        [engine newQuestion];
+    }
 }
 
 @end

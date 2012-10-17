@@ -47,7 +47,6 @@
 		E687F8EF1625663E00BA0AF0 /* GameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E687F8EE1625663E00BA0AF0 /* GameEngine.m */; };
 		E687F9121626AC2F00BA0AF0 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = E687F9111626AC2F00BA0AF0 /* Card.m */; };
 		E687F9141626B97A00BA0AF0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F9131626B97A00BA0AF0 /* Security.framework */; };
-		E687F91F162C0C4100BA0AF0 /* CardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E687F8E716255EC700BA0AF0 /* CardManager.m */; };
 		E687F920162C0C5A00BA0AF0 /* libLMLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F8E216255E6700BA0AF0 /* libLMLibrary.a */; };
 /* End PBXBuildFile section */
 
@@ -505,7 +504,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E687F91F162C0C4100BA0AF0 /* CardManager.m in Sources */,
 				E687F88E16252D0200BA0AF0 /* HappyBabyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

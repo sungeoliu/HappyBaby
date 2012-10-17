@@ -100,7 +100,8 @@ static CardManager * sDefaultManager = nil;
         return YES;
     }else{
         // image already exist, occpy the old one.
-        return [documentManager saveImage:image toURL:[NSURL URLWithString:card.image]];
+        NSURL * url = [NSURL URLWithString:card.image];
+        return [documentManager saveImage:image toURL:url];
     }
 }
 

@@ -41,6 +41,8 @@
 }
 
 - (BOOL)generateQuestionOrderTableWithLength:(NSInteger)length{
+    NSLog(@"generate question index table");
+    
     // initialize order table;
     [self initQuestionOrderTableWithLength:length];
 
@@ -102,29 +104,37 @@
     }
     
     [self stopTimer];
+    
+    NSLog(@"question timeout");
 }
 
 - (Card *)currentQuestionCard{
-    u_int8_t questionIndex = _questionOrderTable[_questionOrderIndex];
-    return [_cards objectAtIndex:questionIndex];;
+    if (_questionOrderIndex >= 0) {
+        u_int8_t questionIndex = _questionOrderTable[_questionOrderIndex];
+        return [_cards objectAtIndex:questionIndex];;
+    }else{
+        return nil;
+    }
 }
 
 - (void)newQuestion{
-    if ((_questionOrderIndex + 1) != _cards.count) {
-        _questionOrderIndex ++;
-    }else{
+    if (_questionOrderIndex == _cards.count) {
         [self generateQuestionOrderTableWithLength:_cards.count];
     }
     
     Card * card = [self currentQuestionCard];
     if (self.delegate != nil) {
         if ([self.delegate respondsToSelector:@selector(gotQuestion:withVoice:)]) {
-            // TODO pass voice to ...
-            [self.delegate performSelector:@selector(gotQuestion:withVoice:) withObject:card withObject:nil];
+            NSURL * soundURL = [NSURL URLWithString:card.pronunciation];
+            [self.delegate performSelector:@selector(gotQuestion:withVoice:) withObject:card.name withObject:soundURL];
         }
     }
     
+    NSLog(@"new question for %@ with id %d", card.name, [card.id integerValue]);
+    
     [self startTimerForCard:card];
+    
+    _questionOrderIndex ++;
 }
 
 - (void)checkAnswer:(NSNumber *)objectId{
