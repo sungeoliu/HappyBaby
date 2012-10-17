@@ -75,9 +75,7 @@
 
 - (void)startGameWithAlbum:(AlbumType)albumType{
     _cards = [[CardManager defaultManager] allCardsInAlbum:albumType];
-    
-    [self generateQuestionOrderTableWithLength:_cards.count];
-    
+    _questionOrderIndex = -1;
 }
 
 - (void)stopGame{
@@ -123,8 +121,11 @@
 }
 
 - (void)newQuestion{
-    if (_questionOrderIndex == _cards.count) {
+    if (_questionOrderIndex == -1 ||
+        _questionOrderIndex + 1 == _cards.count) {
         [self generateQuestionOrderTableWithLength:_cards.count];
+    }else{
+        _questionOrderIndex ++;
     }
     
     Card * card = [self currentQuestionCard];
@@ -138,8 +139,6 @@
     NSLog(@"new question for %@ with id %d", card.name, [card.id integerValue]);
     
     [self startTimerForCard:card];
-    
-    _questionOrderIndex ++;
 }
 
 - (void)checkAnswer:(NSNumber *)objectId{
