@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HomeViewController.h"
+#import "CardManager.h"
 
 @implementation AppDelegate
 
@@ -19,12 +20,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+    
     HomeViewController * homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
-    _navController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
+    _navController = [[UIExtendNavigationController alloc] initWithRootViewController:homeViewController];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = _navController;
     [self.window makeKeyAndVisible];
+    
+    //测试数据
+    [[CardManager defaultManager] newCardWithName:@"爸爸" inAlbum:AlbumTypeFamily];
+    [[CardManager defaultManager] newCardWithName:@"妈妈" inAlbum:AlbumTypeFamily];
+    [[CardManager defaultManager] newCardWithName:@"爷爷" inAlbum:AlbumTypeFamily];
+    [[CardManager defaultManager] newCardWithName:@"奶奶" inAlbum:AlbumTypeFamily];
+    [[CardManager defaultManager] newCardWithName:@"外公" inAlbum:AlbumTypeFamily];
+    [[CardManager defaultManager] newCardWithName:@"外婆" inAlbum:AlbumTypeFamily];
     return YES;
 }
 

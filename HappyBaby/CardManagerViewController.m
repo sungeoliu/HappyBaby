@@ -124,12 +124,8 @@
 }
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationPortrait;
-}
-
 -(NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
+    return UIInterfaceOrientationMaskLandscape;
 }
 
 - (BOOL)shouldAutorotate {

@@ -47,16 +47,16 @@
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+/*- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return UIInterfaceOrientationLandscapeLeft;
-}
+}*/
 
 -(NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskLandscape;
 }
 
 - (BOOL)shouldAutorotate {
-    return NO;
+    return YES;
 }
 
 - (IBAction)startGame:(UIButton *)sender {

@@ -17,16 +17,17 @@
 @end
 
 @implementation QuestionModeGameViewController
+@synthesize labelCountdown = _labelCountdown;
 
 #pragma 私有函数
 - (void)showAlert {
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请进行设置数据" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请设置数据" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
 
 }
 // 检查卡片图片、录音是否进行设置
 - (BOOL)checkCards {
-    if (nil == self.cards) {
+    if (nil != self.cards) {
         NSInteger count = self.cards.count;
         Card * card;
         for (NSInteger index = 0; index < count; index++) {
@@ -111,7 +112,7 @@
     switch (self.answerState) {
         case AnswerStateRight:
         case AnswerStateTimeout:
-        case AnswerStateWrong:
+        //case AnswerStateWrong:
             [_gameEngine newQuestion];
             break;
         case AnswerStateReady:
@@ -137,21 +138,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _gameEngine.answerQuestionTimerInterval = 10;
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
     if ([self checkCards]) {
         [self initView];
         self.answerState = AnswerStateReady;
         [_soundManager playSystemSound:SystemSoundReady];
         [_soundManager playBackgroundSound];
     }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
     [self registerHandleMessage];
 }
@@ -172,6 +174,14 @@
 
 - (IBAction)checkAnswer:(UIButton *)sender {
     [_gameEngine checkAnswer:[NSNumber numberWithInteger:sender.tag]];
+}
+
+-(NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscape;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
 }
 
 #pragma GameEngineDelegate

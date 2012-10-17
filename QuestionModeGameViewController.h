@@ -24,6 +24,7 @@
 @property(weak, nonatomic) IBOutlet UILabel * label5;
 @property(weak, nonatomic) IBOutlet UILabel * label6;
 @property(weak, nonatomic) IBOutlet UILabel * labelInfo;
+@property(weak, nonatomic) IBOutlet UILabel * labelCountdown;
 
 - (IBAction)checkAnswer:(UIButton *)sender;
 
