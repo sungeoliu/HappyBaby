@@ -12,6 +12,7 @@
 		3C0CE26E162D33E900E86063 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE26B162D33E900E86063 /* wrong.mp3 */; };
 		3C0CE26F162D33E900E86063 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE26C162D33E900E86063 /* right.mp3 */; };
 		3C0CE270162D33E900E86063 /* ready.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE26D162D33E900E86063 /* ready.mp3 */; };
+		3C0CE2A3162EA6B100E86063 /* UIExtendNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0CE2A2162EA6B100E86063 /* UIExtendNavigationController.m */; };
 		3C475A691628F5D40027A4FD /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C475A681628F5D40027A4FD /* backgroundMusic.mp3 */; };
 		3C475A6D1628FB540027A4FD /* CardManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C475A6B1628FB540027A4FD /* CardManagerViewController.m */; };
 		3C475A6E1628FB540027A4FD /* CardManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C475A6C1628FB540027A4FD /* CardManagerViewController.xib */; };
@@ -88,6 +89,8 @@
 		3C0CE26B162D33E900E86063 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = wrong.mp3; path = Resouse/sound/wrong.mp3; sourceTree = "<group>"; };
 		3C0CE26C162D33E900E86063 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = right.mp3; path = Resouse/sound/right.mp3; sourceTree = "<group>"; };
 		3C0CE26D162D33E900E86063 /* ready.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ready.mp3; path = Resouse/sound/ready.mp3; sourceTree = "<group>"; };
+		3C0CE2A1162EA6B000E86063 /* UIExtendNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIExtendNavigationController.h; sourceTree = "<group>"; };
+		3C0CE2A2162EA6B100E86063 /* UIExtendNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIExtendNavigationController.m; sourceTree = "<group>"; };
 		3C475A681628F5D40027A4FD /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		3C475A6A1628FB540027A4FD /* CardManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardManagerViewController.h; sourceTree = "<group>"; };
 		3C475A6B1628FB540027A4FD /* CardManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardManagerViewController.m; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				3C475A6B1628FB540027A4FD /* CardManagerViewController.m */,
 				3C0CE25D162BF6D000E86063 /* CardAudioRecordViewController.h */,
 				3C0CE25E162BF6D000E86063 /* CardAudioRecordViewController.m */,
+				3C0CE2A1162EA6B000E86063 /* UIExtendNavigationController.h */,
+				3C0CE2A2162EA6B100E86063 /* UIExtendNavigationController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -497,6 +502,7 @@
 				3CD731341627F4B3000432BD /* QuestionModeGameViewController.m in Sources */,
 				3C475A6D1628FB540027A4FD /* CardManagerViewController.m in Sources */,
 				3C0CE260162BF6D100E86063 /* CardAudioRecordViewController.m in Sources */,
+				3C0CE2A3162EA6B100E86063 /* UIExtendNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
