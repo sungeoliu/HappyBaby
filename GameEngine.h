@@ -15,7 +15,7 @@
 - (void)gotQuestion:(NSString *)question withVoice:(NSURL *)voice;
 - (void)wrongAnswerForObject:(NSNumber *)objectId;
 - (void)rightAnswerForObject:(NSNumber *)objectId;
-- (void)anwserTimeout:(NSNumber *)objectId;
+- (void)answerTimeout:(NSNumber *)objectId;
 
 @end
 
