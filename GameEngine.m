@@ -105,7 +105,8 @@
     
     if (self.delegate != nil) {
         if ([self.delegate respondsToSelector:@selector(questionTimerCountdown:)]) {
-            [self.delegate performSelector:@selector(questionTimerCountdown:) withObject:[NSNumber numberWithInteger:_countDownSeconds]];
+            [self.delegate performSelector:@selector(questionTimerCountdown:)
+                                withObject:[NSNumber numberWithInteger:_countDownSeconds]];
         }
     }
     
@@ -161,6 +162,7 @@
 
     if (self.delegate != nil) {
         if (result && [self.delegate respondsToSelector:@selector(rightAnswerForObject:)]) {
+            [self stopTimer];
             [self.delegate performSelector:@selector(rightAnswerForObject:) withObject:card.id];
         }else if(!result && [self.delegate respondsToSelector:@selector(wrongAnswerForObject:)]){
             [self.delegate performSelector:@selector(wrongAnswerForObject:) withObject:card.id];
