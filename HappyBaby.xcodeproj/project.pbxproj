@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		3C0CE260162BF6D100E86063 /* CardAudioRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0CE25E162BF6D000E86063 /* CardAudioRecordViewController.m */; };
 		3C0CE261162BF6D100E86063 /* CardAudioRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE25F162BF6D100E86063 /* CardAudioRecordViewController.xib */; };
-		3C0CE26E162D33E900E86063 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE26B162D33E900E86063 /* right.mp3 */; };
-		3C0CE26F162D33E900E86063 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE26C162D33E900E86063 /* wrong.mp3 */; };
+		3C0CE26E162D33E900E86063 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE26B162D33E900E86063 /* wrong.mp3 */; };
+		3C0CE26F162D33E900E86063 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE26C162D33E900E86063 /* right.mp3 */; };
 		3C0CE270162D33E900E86063 /* ready.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE26D162D33E900E86063 /* ready.mp3 */; };
 		3C475A691628F5D40027A4FD /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C475A681628F5D40027A4FD /* backgroundMusic.mp3 */; };
 		3C475A6D1628FB540027A4FD /* CardManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C475A6B1628FB540027A4FD /* CardManagerViewController.m */; };
@@ -51,7 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3C0CE290162E87A200E86063 /* PBXContainerItemProxy */ = {
+		3C0CE29B162E94A500E86063 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E687F84F16252D0100BA0AF0 /* Project object */;
 			proxyType = 1;
@@ -85,8 +85,8 @@
 		3C0CE25D162BF6D000E86063 /* CardAudioRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAudioRecordViewController.h; sourceTree = "<group>"; };
 		3C0CE25E162BF6D000E86063 /* CardAudioRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAudioRecordViewController.m; sourceTree = "<group>"; };
 		3C0CE25F162BF6D100E86063 /* CardAudioRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardAudioRecordViewController.xib; path = HappyBaby/CardAudioRecordViewController.xib; sourceTree = "<group>"; };
-		3C0CE26B162D33E900E86063 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = right.mp3; path = Resouse/sound/right.mp3; sourceTree = "<group>"; };
-		3C0CE26C162D33E900E86063 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = wrong.mp3; path = Resouse/sound/wrong.mp3; sourceTree = "<group>"; };
+		3C0CE26B162D33E900E86063 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = wrong.mp3; path = Resouse/sound/wrong.mp3; sourceTree = "<group>"; };
+		3C0CE26C162D33E900E86063 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = right.mp3; path = Resouse/sound/right.mp3; sourceTree = "<group>"; };
 		3C0CE26D162D33E900E86063 /* ready.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ready.mp3; path = Resouse/sound/ready.mp3; sourceTree = "<group>"; };
 		3C475A681628F5D40027A4FD /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		3C475A6A1628FB540027A4FD /* CardManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardManagerViewController.h; sourceTree = "<group>"; };
@@ -170,8 +170,8 @@
 		3C475A671628F5C30027A4FD /* sound */ = {
 			isa = PBXGroup;
 			children = (
-				3C0CE26B162D33E900E86063 /* right.mp3 */,
-				3C0CE26C162D33E900E86063 /* wrong.mp3 */,
+				3C0CE26B162D33E900E86063 /* wrong.mp3 */,
+				3C0CE26C162D33E900E86063 /* right.mp3 */,
 				3C0CE26D162D33E900E86063 /* ready.mp3 */,
 				3C475A681628F5D40027A4FD /* backgroundMusic.mp3 */,
 			);
@@ -361,7 +361,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				3C0CE291162E87A200E86063 /* PBXTargetDependency */,
+				3C0CE29C162E94A500E86063 /* PBXTargetDependency */,
 				E687F8E416255E7900BA0AF0 /* PBXTargetDependency */,
 			);
 			name = HappyBaby;
@@ -447,8 +447,8 @@
 				3C475A691628F5D40027A4FD /* backgroundMusic.mp3 in Resources */,
 				3C475A6E1628FB540027A4FD /* CardManagerViewController.xib in Resources */,
 				3C0CE261162BF6D100E86063 /* CardAudioRecordViewController.xib in Resources */,
-				3C0CE26E162D33E900E86063 /* right.mp3 in Resources */,
-				3C0CE26F162D33E900E86063 /* wrong.mp3 in Resources */,
+				3C0CE26E162D33E900E86063 /* wrong.mp3 in Resources */,
+				3C0CE26F162D33E900E86063 /* right.mp3 in Resources */,
 				3C0CE270162D33E900E86063 /* ready.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,10 +511,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3C0CE291162E87A200E86063 /* PBXTargetDependency */ = {
+		3C0CE29C162E94A500E86063 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E687F87D16252D0200BA0AF0 /* HappyBabyTests */;
-			targetProxy = 3C0CE290162E87A200E86063 /* PBXContainerItemProxy */;
+			targetProxy = 3C0CE29B162E94A500E86063 /* PBXContainerItemProxy */;
 		};
 		E687F88516252D0200BA0AF0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
