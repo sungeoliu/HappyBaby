@@ -44,34 +44,52 @@
 - (void)initView {
     if (nil != self.cards && self.cards.count == kCardSize) {
         UIImage * image;
+        NSURL * url;
+        NSData * data;
+        
         Card * card = [self.cards objectAtIndex:0];
         _button1.tag = [card.id integerValue];
-        image = [[UIImage alloc] initWithContentsOfFile:card.image];
+        url = [[NSURL alloc] initWithString:card.image];
+        data = [NSData dataWithContentsOfURL:url];
+        image = [UIImage imageWithData:data];
         [_button1 setBackgroundImage:image forState:UIControlStateNormal];
         _label1.text = card.name;
+        
         card = [self.cards objectAtIndex:1];
         _button2.tag = [card.id integerValue];
-        image = [[UIImage alloc] initWithContentsOfFile:card.image];
+        url = [[NSURL alloc] initWithString:card.image];
+        data = [NSData dataWithContentsOfURL:url];
+        image = [UIImage imageWithData:data];
         [_button2 setBackgroundImage:image forState:UIControlStateNormal];
         _label2.text = card.name;
+        
         card = [self.cards objectAtIndex:2];
         _button3.tag = [card.id integerValue];
-        image = [[UIImage alloc] initWithContentsOfFile:card.image];
+        url = [[NSURL alloc] initWithString:card.image];
+        data = [NSData dataWithContentsOfURL:url];
+        image = [UIImage imageWithData:data];
         [_button3 setBackgroundImage:image forState:UIControlStateNormal];
         _label3.text = card.name;
+        
         card = [self.cards objectAtIndex:3];
         _button4.tag = [card.id integerValue];
         image = [[UIImage alloc] initWithContentsOfFile:card.image];
         [_button4 setBackgroundImage:image forState:UIControlStateNormal];
         _label4.text = card.name;
+        
         card = [self.cards objectAtIndex:4];
         _button5.tag = [card.id integerValue];
-        image = [[UIImage alloc] initWithContentsOfFile:card.image];
+        url = [[NSURL alloc] initWithString:card.image];
+        data = [NSData dataWithContentsOfURL:url];
+        image = [UIImage imageWithData:data];
         [_button5 setBackgroundImage:image forState:UIControlStateNormal];
         _label5.text = card.name;
+        
         card = [self.cards objectAtIndex:5];
         _button6.tag = [card.id integerValue];
-        image = [[UIImage alloc] initWithContentsOfFile:card.image];
+        url = [[NSURL alloc] initWithString:card.image];
+        data = [NSData dataWithContentsOfURL:url];
+        image = [UIImage imageWithData:data];
         [_button6 setBackgroundImage:image forState:UIControlStateNormal];
         _label6.text = card.name;
     }
