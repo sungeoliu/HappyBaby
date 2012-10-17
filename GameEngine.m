@@ -26,6 +26,7 @@
  */
 
 @implementation GameEngine
+@synthesize answerQuestionTimerInterval  = _answerQuestionTimerInterval;
 @synthesize delegate = _delegate;
 
 - (void)initQuestionOrderTableWithLength:(NSInteger)length{
@@ -85,7 +86,11 @@
 
 - (void)startTimerForCard:(Card *)card{
     [self stopTimer];
-    _questionTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(timeout:) userInfo:card repeats:NO];
+
+    NSInteger timeInterval = self.answerQuestionTimerInterval == 0 ? 5 : self.answerQuestionTimerInterval;
+    _questionTimer = [NSTimer scheduledTimerWithTimeInterval:timeInterval
+                                                      target:self
+                                                    selector:@selector(timeout:) userInfo:card.id repeats:NO];
 }
 
 - (void)stopTimer{
@@ -146,9 +151,9 @@
 
     if (self.delegate != nil) {
         if (result && [self.delegate respondsToSelector:@selector(rightAnswerForObject:)]) {
-            [self.delegate performSelector:@selector(rightAnswerForObject:) withObject:card];
+            [self.delegate performSelector:@selector(rightAnswerForObject:) withObject:card.id];
         }else if(!result && [self.delegate respondsToSelector:@selector(wrongAnswerForObject:)]){
-            [self.delegate performSelector:@selector(wrongAnswerForObject:) withObject:card];
+            [self.delegate performSelector:@selector(wrongAnswerForObject:) withObject:card.id];
         }
     }
     

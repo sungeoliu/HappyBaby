@@ -22,6 +22,7 @@
 
 @interface GameEngine : NSObject
 
+@property (nonatomic) NSInteger answerQuestionTimerInterval;
 @property (nonatomic, strong) id<GameEngineDelegate> delegate;
 
 - (void)startGameWithAlbum:(AlbumType)albumType;
