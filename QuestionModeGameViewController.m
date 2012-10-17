@@ -211,6 +211,10 @@
     [self shakeWithButtonTag:objectId];
 }
 
+- (void)questionTimerCountdown:(NSNumber *) secondsLeft {
+    _labelCountdown.text = [secondsLeft stringValue];
+}
+
 #pragma AlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == alertView.cancelButtonIndex) {
