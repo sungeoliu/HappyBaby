@@ -73,7 +73,9 @@
         
         card = [self.cards objectAtIndex:3];
         _button4.tag = [card.id integerValue];
-        image = [[UIImage alloc] initWithContentsOfFile:card.image];
+        url = [[NSURL alloc] initWithString:card.image];
+        data = [NSData dataWithContentsOfURL:url];
+        image = [UIImage imageWithData:data];
         [_button4 setBackgroundImage:image forState:UIControlStateNormal];
         _label4.text = card.name;
         
@@ -188,13 +190,12 @@
 }
 
 - (void)wrongAnswerForObject:(NSNumber *)objectId {
-    [self shakeWithButtonTag:objectId];
     self.answerState = AnswerStateWrong;
     [_soundManager playSystemSound:SystemSoundWrong];
     [self shakeWithButtonTag:objectId];
 }
 
-- (void)anwserTimeout:(NSNumber *)objectId {
+- (void)answerTimeout:(NSNumber *)objectId {
     self.answerState = AnswerStateTimeout;
     [_soundManager playSystemSound:SystemSoundWrong];
     [self shakeWithButtonTag:objectId];
