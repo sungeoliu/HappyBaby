@@ -16,6 +16,10 @@
 		3C475A691628F5D40027A4FD /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C475A681628F5D40027A4FD /* backgroundMusic.mp3 */; };
 		3C475A6D1628FB540027A4FD /* CardManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C475A6B1628FB540027A4FD /* CardManagerViewController.m */; };
 		3C475A6E1628FB540027A4FD /* CardManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C475A6C1628FB540027A4FD /* CardManagerViewController.xib */; };
+		3CD0C235162FF1B60023D217 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD0C234162FF1B60023D217 /* QuartzCore.framework */; };
+		3CD0C238162FF24F0023D217 /* ring.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C236162FF24F0023D217 /* ring.png */; };
+		3CD0C239162FF24F0023D217 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C237162FF24F0023D217 /* star.png */; };
+		3CD0C23B162FF76B0023D217 /* QuestionMode2GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C23A162FF76B0023D217 /* QuestionMode2GameViewController.xib */; };
 		3CD731261627F32D000432BD /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD731251627F32D000432BD /* SoundManager.m */; };
 		3CD731281627F35C000432BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD731271627F35C000432BD /* AVFoundation.framework */; };
 		3CD731321627F4B3000432BD /* BaseGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7312D1627F4B3000432BD /* BaseGameViewController.m */; };
@@ -95,6 +99,10 @@
 		3C475A6A1628FB540027A4FD /* CardManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardManagerViewController.h; sourceTree = "<group>"; };
 		3C475A6B1628FB540027A4FD /* CardManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardManagerViewController.m; sourceTree = "<group>"; };
 		3C475A6C1628FB540027A4FD /* CardManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardManagerViewController.xib; path = HappyBaby/CardManagerViewController.xib; sourceTree = "<group>"; };
+		3CD0C234162FF1B60023D217 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3CD0C236162FF24F0023D217 /* ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring.png; path = Resouse/images/ring.png; sourceTree = "<group>"; };
+		3CD0C237162FF24F0023D217 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Resouse/images/star.png; sourceTree = "<group>"; };
+		3CD0C23A162FF76B0023D217 /* QuestionMode2GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionMode2GameViewController.xib; sourceTree = "<group>"; };
 		3CD731241627F32D000432BD /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
 		3CD731251627F32D000432BD /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
 		3CD731271627F35C000432BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -145,12 +153,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CD0C235162FF1B60023D217 /* QuartzCore.framework in Frameworks */,
+				E687F86116252D0100BA0AF0 /* CoreGraphics.framework in Frameworks */,
 				3CD731281627F35C000432BD /* AVFoundation.framework in Frameworks */,
 				E687F9141626B97A00BA0AF0 /* Security.framework in Frameworks */,
 				E687F8E516255E8300BA0AF0 /* libLMLibrary.a in Frameworks */,
 				E687F85D16252D0100BA0AF0 /* UIKit.framework in Frameworks */,
 				E687F85F16252D0100BA0AF0 /* Foundation.framework in Frameworks */,
-				E687F86116252D0100BA0AF0 /* CoreGraphics.framework in Frameworks */,
 				E687F86316252D0100BA0AF0 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +217,7 @@
 				3C475A6C1628FB540027A4FD /* CardManagerViewController.xib */,
 				3CD731471627F656000432BD /* HomeViewController.xib */,
 				3CD731361627F4D5000432BD /* QuestionModeGameViewController.xib */,
+				3CD0C23A162FF76B0023D217 /* QuestionMode2GameViewController.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -234,6 +244,8 @@
 		3CD731421627F5EB000432BD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3CD0C236162FF24F0023D217 /* ring.png */,
+				3CD0C237162FF24F0023D217 /* star.png */,
 				3CD731431627F5FD000432BD /* father.png */,
 				3CD731441627F5FD000432BD /* mother.png */,
 			);
@@ -243,6 +255,7 @@
 		E687F84D16252D0100BA0AF0 = {
 			isa = PBXGroup;
 			children = (
+				3CD0C234162FF1B60023D217 /* QuartzCore.framework */,
 				3CD731231627F302000432BD /* SoundManager */,
 				E687F8DA16255E6600BA0AF0 /* LMLibrary.xcodeproj */,
 				E687F89F162551BF00BA0AF0 /* DataStore */,
@@ -455,6 +468,9 @@
 				3C0CE26E162D33E900E86063 /* wrong.mp3 in Resources */,
 				3C0CE26F162D33E900E86063 /* right.mp3 in Resources */,
 				3C0CE270162D33E900E86063 /* ready.mp3 in Resources */,
+				3CD0C238162FF24F0023D217 /* ring.png in Resources */,
+				3CD0C239162FF24F0023D217 /* star.png in Resources */,
+				3CD0C23B162FF76B0023D217 /* QuestionMode2GameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
