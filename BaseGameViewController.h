@@ -29,5 +29,8 @@ typedef enum {
 
 - (void)initCardsWithAlbum:(AlbumType)albumType;
 - (void)shakeView:(UIButton *)view;
+- (void)playFirework;
+- (void)stopFirework;
+
 - (IBAction)back:(id)sender;
 @end

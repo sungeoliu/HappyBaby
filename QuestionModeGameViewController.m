@@ -12,6 +12,7 @@
 @interface QuestionModeGameViewController () {
     GameEngine * _gameEngine;
     SoundManager * _soundManager;
+    NSNumber * _curSelectCardId;
 }
 
 @end
@@ -112,7 +113,7 @@
     switch (self.answerState) {
         case AnswerStateRight:
         case AnswerStateTimeout:
-        //case AnswerStateWrong:
+            [self stopFirework];
             [_gameEngine newQuestion];
             break;
         case AnswerStateReady:
@@ -173,6 +174,7 @@
 }
 
 - (IBAction)checkAnswer:(UIButton *)sender {
+    _curSelectCardId = [NSNumber numberWithInteger:sender.tag];
     [_gameEngine checkAnswer:[NSNumber numberWithInteger:sender.tag]];
 }
 
@@ -195,6 +197,7 @@
 }
 
 - (void)rightAnswerForObject:(NSNumber *)objectId {
+    [self playFirework];
     self.answerState = AnswerStateRight;
     [_soundManager playSystemSound:SystemSoundRight];
 }
@@ -202,7 +205,7 @@
 - (void)wrongAnswerForObject:(NSNumber *)objectId {
     self.answerState = AnswerStateWrong;
     [_soundManager playSystemSound:SystemSoundWrong];
-    [self shakeWithButtonTag:objectId];
+    [self shakeWithButtonTag:_curSelectCardId];
 }
 
 - (void)answerTimeout:(NSNumber *)objectId {
