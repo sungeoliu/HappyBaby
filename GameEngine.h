@@ -8,11 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "CardManager.h"
+#import "Question.h"
+
+typedef enum{
+    GameModeUndefined = 0,
+    GameModeTwoOptions = 2,
+    GameModeThreeOptions = 3,
+    GameModeFourOptions = 4
+}GameMode;
 
 @protocol GameEngineDelegate <NSObject>
 
 @optional
-- (void)gotQuestion:(NSString *)question withVoice:(NSURL *)voice;
+- (void)gotQuestion:(Question *)question;
 - (void)wrongAnswerForObject:(NSNumber *)objectId;
 - (void)rightAnswerForObject:(NSNumber *)objectId;
 - (void)answerTimeout:(NSNumber *)objectId;
@@ -24,6 +32,7 @@
 @interface GameEngine : NSObject
 
 @property (nonatomic) NSInteger answerQuestionTimerInterval;
+@property (nonatomic) GameMode gameMode;
 @property (nonatomic, strong) id<GameEngineDelegate> delegate;
 
 - (void)startGameWithAlbum:(AlbumType)albumType;
