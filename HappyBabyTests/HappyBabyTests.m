@@ -72,7 +72,18 @@
     GameEngine * engine = [[GameEngine alloc] init];
     [engine startGameWithAlbum:AlbumTypeFamily];
     
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 8; i++) {
+        engine.gameMode = GameModeTwoOptions;
+        [engine newQuestion];
+    }
+    
+    for (int i = 0; i < 8; i++) {
+        engine.gameMode = GameModeThreeOptions;
+        [engine newQuestion];
+    }
+    
+    for (int i = 0; i < 8; i++) {
+        engine.gameMode = GameModeFourOptions;
         [engine newQuestion];
     }
 }
