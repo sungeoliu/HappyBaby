@@ -11,8 +11,8 @@
 
 @interface GameEngine(){
     NSArray * _cards;
-    uint8_t * _questionOrderTable;
-    NSInteger _questionOrderIndex;
+    uint8_t * _questionSequenceTable;
+    NSInteger _questionIndex;
     NSTimer * _questionTimer;
     NSInteger _countDownSeconds;
 }
@@ -28,59 +28,47 @@
 
 @implementation GameEngine
 @synthesize answerQuestionTimerInterval  = _answerQuestionTimerInterval;
+@synthesize gameMode = _gameMode;
 @synthesize delegate = _delegate;
 
-- (void)initQuestionOrderTableWithLength:(NSInteger)length{
-    if (_questionOrderTable != nil) {
-        free(_questionOrderTable);
-    }
-    
-    // fullfill table with ordered number.
-    _questionOrderTable = (u_int8_t *)malloc(length);
-    for (int i = 0; i < length; i++) {
-        _questionOrderTable[i] = i;
-    }
-}
-
-- (BOOL)generateQuestionOrderTableWithLength:(NSInteger)length{
-    NSLog(@"generate question index table");
-    
-    // initialize order table;
-    [self initQuestionOrderTableWithLength:length];
-
+- (u_int8_t *)newSequenceTableWithLength:(NSInteger)length{
     // generate chaos-maker table.
-    u_int8_t * bytes = (u_int8_t *)malloc(length);
-    if (0 != SecRandomCopyBytes(kSecRandomDefault, length, bytes)) {
-        free(bytes);
-        return NO;
+    u_int8_t * chaos = (u_int8_t *)malloc(length);
+    if (0 != SecRandomCopyBytes(kSecRandomDefault, length, chaos)) {
+        free(chaos);
+        return nil;
     }
-
+    
+    // initialize sequence table;
+    u_int8_t * sequence = (u_int8_t *)malloc(length);
+    for (int i = 0; i < length; i++) {
+        sequence[i] = i;
+    }
+    
     // using chaos-maker to disorder questionOrderTable.
     u_int8_t tmp;
     for (int i = 0 ; i < length; i ++) {
-        bytes[i] = bytes[i] % length;
+        chaos[i] = chaos[i] % length;
 
         // exchange values determined by chaos-maker table.
-        tmp = _questionOrderTable[i];
-        _questionOrderTable[i] = _questionOrderTable[bytes[i]];
-        _questionOrderTable[bytes[i]] = tmp;
+        tmp = sequence[i];
+        sequence[i] = sequence[chaos[i]];
+        sequence[chaos[i]] = tmp;
     }
     
-    _questionOrderIndex = 0;
-    
     // NOTE !!!
-    free(bytes);
+    free(chaos);
     
-    return YES;
+    return sequence;
 }
 
 - (void)startGameWithAlbum:(AlbumType)albumType{
     _cards = [[CardManager defaultManager] allCardsInAlbum:albumType];
-    _questionOrderIndex = -1;
+    _questionIndex = -1;
 }
 
 - (void)stopGame{
-    free(_questionOrderTable);
+    free(_questionSequenceTable);
 }
 
 - (void)startTimerForCard:(Card *)card{
@@ -124,31 +112,96 @@
 }
 
 - (Card *)currentQuestionCard{
-    if (_questionOrderIndex >= 0) {
-        u_int8_t questionIndex = _questionOrderTable[_questionOrderIndex];
+    if (_questionIndex >= 0) {
+        u_int8_t questionIndex = _questionSequenceTable[_questionIndex];
         return [_cards objectAtIndex:questionIndex];;
     }else{
         return nil;
     }
 }
 
-- (void)newQuestion{
-    if (_questionOrderIndex == -1 ||
-        _questionOrderIndex + 1 == _cards.count) {
-        [self generateQuestionOrderTableWithLength:_cards.count];
-    }else{
-        _questionOrderIndex ++;
+- (NSArray *)optionsForCurrentQuestion{
+    if (self.gameMode == GameModeUndefined) {
+        self.gameMode = GameModeTwoOptions;
     }
+    
+    // 从所有卡片中选择其中的N张，所以要根据卡片总数产生随机数组。
+    u_int8_t * optionSequence = [self newSequenceTableWithLength:_cards.count];
+    
+    // 根据游戏模式，生成对应个数的选项。
+    NSMutableArray * optionsArray = [NSMutableArray arrayWithCapacity:self.gameMode];
+    for (int i = 0; i < self.gameMode; i ++) {
+        [optionsArray addObject:@"empty"];
+    }
+    
+    // 先随机确定答案卡片的位置。
+    Card * answerCard = [self currentQuestionCard];
+    int answerIndex = optionSequence[_cards.count - 1] % self.gameMode;
+    NSLog(@"anser index %d id %d", answerIndex, [answerCard.id integerValue]);
+    [optionsArray replaceObjectAtIndex:answerIndex withObject:answerCard.id];
+//    [optionsArray insertObject:answerCard.id atIndex:answerIndex];
+    
+    // 再依次增加两张非答案的卡片。
+    int optionIndex = 0;
+    int optionCount = 1;
+    for (int i = 0; i < _cards.count && optionCount < self.gameMode; i++) {
+        int index = optionSequence[i];
+        Card * optionCard = [_cards objectAtIndex:index];
+        if ([optionCard.id isEqualToNumber:answerCard.id]) {
+            // 跳过答案卡片，只会跳一次。
+            continue;
+        }
+        
+        // 跳过已经被答案卡片占用的位置。
+        if (optionIndex == answerIndex) {
+            optionIndex++;
+        }
+        
+//        NSLog(@"card id %d", [optionCard.id integerValue]);
+        [optionsArray replaceObjectAtIndex:optionIndex++ withObject:optionCard.id];
+        optionCount ++;
+    }
+    
+    free(optionSequence);
+    
+    for (int i = 0; i < self.gameMode; i++) {
+        NSLog(@"Option %d: %d", i, [[optionsArray objectAtIndex:i] integerValue]);
+    }
+    
+    return optionsArray;
+}
+
+- (void)nextQuestion{
+    if (_questionIndex == -1 ||
+        _questionIndex + 1 == _cards.count) {
+        if (_questionSequenceTable != NULL) {
+            free(_questionSequenceTable);
+        }
+        
+        NSLog(@"new question sequence");
+        _questionSequenceTable = [self newSequenceTableWithLength:_cards.count];
+        _questionIndex = 0;
+    }else{
+        _questionIndex ++;
+    }
+}
+
+- (void)newQuestion{
+    [self nextQuestion];
     
     Card * card = [self currentQuestionCard];
+    NSLog(@"new question for %@ with id %d", card.name, [card.id integerValue]);
+    
+    NSString * prompt = [NSString stringWithFormat:@"%@ 在哪里？", card.name];
+    NSURL * soundURL = [NSURL URLWithString:card.pronunciation];
+    NSArray * options = [self optionsForCurrentQuestion];
+    Question * question = [[Question alloc] initWithPrompt:prompt withVoice:soundURL withOptions:options];
+    
     if (self.delegate != nil) {
-        if ([self.delegate respondsToSelector:@selector(gotQuestion:withVoice:)]) {
-            NSURL * soundURL = [NSURL URLWithString:card.pronunciation];
-            [self.delegate performSelector:@selector(gotQuestion:withVoice:) withObject:card.name withObject:soundURL];
+        if ([self.delegate respondsToSelector:@selector(gotQuestion:)]) {
+            [self.delegate performSelector:@selector(gotQuestion:) withObject:question];
         }
     }
-    
-    NSLog(@"new question for %@ with id %d", card.name, [card.id integerValue]);
     
     [self startTimerForCard:card];
 }

@@ -53,6 +53,7 @@
 		E687F9121626AC2F00BA0AF0 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = E687F9111626AC2F00BA0AF0 /* Card.m */; };
 		E687F9141626B97A00BA0AF0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F9131626B97A00BA0AF0 /* Security.framework */; };
 		E687F920162C0C5A00BA0AF0 /* libLMLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F8E216255E6700BA0AF0 /* libLMLibrary.a */; };
+		E695E8A7162FB54900286730 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = E695E8A6162FB54900286730 /* Question.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,8 @@
 		E687F9101626AC2F00BA0AF0 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		E687F9111626AC2F00BA0AF0 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		E687F9131626B97A00BA0AF0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E695E8A5162FB54900286730 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		E695E8A6162FB54900286730 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +364,8 @@
 			children = (
 				E687F8ED1625663E00BA0AF0 /* GameEngine.h */,
 				E687F8EE1625663E00BA0AF0 /* GameEngine.m */,
+				E695E8A5162FB54900286730 /* Question.h */,
+				E695E8A6162FB54900286730 /* Question.m */,
 			);
 			name = GameControl;
 			sourceTree = "<group>";
@@ -519,6 +524,7 @@
 				3C475A6D1628FB540027A4FD /* CardManagerViewController.m in Sources */,
 				3C0CE260162BF6D100E86063 /* CardAudioRecordViewController.m in Sources */,
 				3C0CE2A3162EA6B100E86063 /* UIExtendNavigationController.m in Sources */,
+				E695E8A7162FB54900286730 /* Question.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
