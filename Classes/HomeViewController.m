@@ -45,13 +45,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _gameMode = GameModeTwoOptions;
-    [self registerHandleMessage];
+    _gameMode = GameModeOneOption;
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self registerHandleMessage];
     [self.navigationController setNavigationBarHidden:YES];
 }
 
@@ -94,7 +94,7 @@
 }
 
 - (IBAction)gameModeChanged:(UISegmentedControl *)sender {
-    _gameMode = sender.selectedSegmentIndex + GameModeTwoOptions;
+    _gameMode = sender.selectedSegmentIndex + GameModeOneOption;
 }
 
 @end

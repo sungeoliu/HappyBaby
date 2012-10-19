@@ -17,5 +17,6 @@
 @property(nonatomic) GameMode gameMode;
 
 - (IBAction)checkAnswer:(UIButton *)sender;
+- (IBAction)newCard:(UIButton *)sender;
 
 @end

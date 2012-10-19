@@ -152,6 +152,7 @@
 - (IBAction)back:(id)sender {
     _gameEngine.delegate = nil;
     [_gameEngine stopGame];
+    [_soundManager stopSound];
     [_soundManager stopBackgroundSound];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self.navigationController popViewControllerAnimated:YES];
@@ -163,6 +164,10 @@
         _curSelectCardId = [_options objectAtIndex:sender.tag - 1 ];
         [_gameEngine checkAnswer:_curSelectCardId];
     }
+}
+
+- (IBAction)newCard:(UIButton *)sender {
+    [_gameEngine newQuestion];
 }
 
 -(NSUInteger)supportedInterfaceOrientations {
@@ -178,9 +183,9 @@
     if (nil != question) {
         [self.labelInfo setText:question.prompt];
     }
+    [_soundManager playSound:question.voice];
     [self initViewWithOptions:question.options];
     self.answerState = AnswerStateWait;
-    [_soundManager playSound:question.voice];
 }
 
 - (void)rightAnswerForObject:(NSNumber *)objectId {
@@ -196,6 +201,9 @@
 }
 
 - (void)answerTimeout:(NSNumber *)objectId {
+    if (_gameMode == GameModeOneOption) {
+        return;
+    }
     self.answerState = AnswerStateTimeout;
     [_soundManager playSystemSound:SystemSoundWrong];
     [self shakeWithButtonTag:[self buttonTagWithCardId:objectId]];
