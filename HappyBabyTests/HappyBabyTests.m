@@ -72,19 +72,35 @@
     GameEngine * engine = [[GameEngine alloc] init];
     [engine startGameWithAlbum:AlbumTypeFamily];
     
-    for (int i = 0; i < 8; i++) {
+    NSInteger loop = 4;
+    
+    NSLog(@"\n一选一");
+    for (int i = 0; i < loop; i++) {
+        engine.gameMode = GameModeOneOption;
+        [engine newQuestion];
+        [engine.currentQuestion debugPrint];
+    }
+
+    
+    NSLog(@"\n二选一");
+    for (int i = 0; i < loop; i++) {
         engine.gameMode = GameModeTwoOptions;
         [engine newQuestion];
+        [engine.currentQuestion debugPrint];
     }
-    
-    for (int i = 0; i < 8; i++) {
+
+    NSLog(@"\n三选一");
+    for (int i = 0; i < loop; i++) {
         engine.gameMode = GameModeThreeOptions;
         [engine newQuestion];
+        [engine.currentQuestion debugPrint];
     }
     
-    for (int i = 0; i < 8; i++) {
+    NSLog(@"\n四选一");
+    for (int i = 0; i < loop; i++) {
         engine.gameMode = GameModeFourOptions;
         [engine newQuestion];
+        [engine.currentQuestion debugPrint];        
     }
 }
 
