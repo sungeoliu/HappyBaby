@@ -12,6 +12,7 @@
 #import "CardManager.h"
 
 #define AlbumString(x) NSLocalizedStringFromTable(x, @"Album", nil)
+#define AlbumCreatedKey  @"AlbumIsCreated"
 
 @interface InternalAlbums(){
     NSMutableArray * _realAlbums;
@@ -22,7 +23,8 @@
 @implementation InternalAlbums
 @synthesize albums = _albums;
 
-- (void)createFamilyAlbumCard{
+- (void)createFamilyAlbumCard{    
+    NSLog(@"createFamilyAlbumCard");
     AlbumType type = AlbumTypeFamily;
     CardManager * cardManager = [CardManager defaultManager];
     
@@ -45,14 +47,25 @@
     album.type = type;
     album.name = name;
     [_realAlbums addObject:album];
-    
-    // TODO 只执行一次。
-    [self createFamilyAlbumCard];
 }
 
 - (id)init{
     if (self = [super init]) {
-        [self newAlbumWithName:AlbumString(@"AlbumTypeFamilyName") withType:AlbumTypeFamily];
+        // 防止多线程并发调用创建专辑内容。
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            // 保证App从安装到卸载只执行一次。现已修改成只支持中文！没有多语言切换的问题了。
+            NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+            BOOL isCreated = [userDefaults boolForKey:AlbumCreatedKey];
+            
+            if (!isCreated) {
+                [self newAlbumWithName:AlbumString(@"AlbumTypeFamilyName") withType:AlbumTypeFamily];
+                [self createFamilyAlbumCard];
+                
+                [userDefaults setBool:YES forKey:AlbumCreatedKey];
+            }
+        });
+
     }
     
     return self;
