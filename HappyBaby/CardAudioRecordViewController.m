@@ -21,7 +21,32 @@
 @implementation CardAudioRecordViewController
 
 @synthesize card = _card;
+@synthesize iamgeView = _iamgeView;
 
+#pragma 私有函数
+-(void)initRecordingImage {
+    self.iamgeView.animationImages = [NSArray arrayWithObjects:
+                                      [UIImage imageNamed:@"recordingSignal001"],
+                                      [UIImage imageNamed:@"recordingSignal002"],
+                                      [UIImage imageNamed:@"recordingSignal003"],
+                                      [UIImage imageNamed:@"recordingSignal004"],
+                                      [UIImage imageNamed:@"recordingSignal005"],
+                                      [UIImage imageNamed:@"recordingSignal006"],
+                                      [UIImage imageNamed:@"recordingSignal007"],
+                                      [UIImage imageNamed:@"recordingSignal008"],
+                                      nil];
+    self.iamgeView.animationDuration = 1;
+}
+
+- (void)playAnimation {
+    [self.iamgeView startAnimating];
+}
+
+- (void)stopAnimation {
+    [self.iamgeView stopAnimating];
+}
+
+#pragma 事件函数
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
