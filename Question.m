@@ -7,6 +7,7 @@
 //
 
 #import "Question.h"
+#import "Card.h"
 
 @implementation Question
 
@@ -14,14 +15,21 @@
 @synthesize voice = _voice;
 @synthesize options = _options;
 
-- (id)initWithPrompt:(NSString *)prompt withVoice:(NSURL *)voice withOptions:(NSArray *)options{
+- (id)initWithAnswerCard:(Card *)card withOptions:(NSArray *)options{
     if (self = [super init]) {
-        self.prompt = prompt;
-        self.voice = voice;
+        self.prompt = [NSString stringWithFormat:@"%@ 在哪里？", card.name];
+        self.voice = [NSURL URLWithString:card.pronunciation];
         self.options = options;
     }
     
     return self;
+}
+
+- (void)debugPrint{
+    NSLog(@"question: %@", self.prompt);
+    for (int i = 0; i < self.options.count; i++) {
+        NSLog(@"option[%d] %d", i, [[self.options objectAtIndex:i] integerValue]);
+    }
 }
 
 @end

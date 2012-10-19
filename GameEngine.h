@@ -12,6 +12,7 @@
 
 typedef enum{
     GameModeUndefined = 0,
+    GameModeOneOption = 1,
     GameModeTwoOptions = 2,
     GameModeThreeOptions = 3,
     GameModeFourOptions = 4
@@ -34,6 +35,7 @@ typedef enum{
 @property (nonatomic) NSInteger answerQuestionTimerInterval;
 @property (nonatomic) GameMode gameMode;
 @property (nonatomic, strong) id<GameEngineDelegate> delegate;
+@property (nonatomic, strong) Question * currentQuestion;
 
 - (void)startGameWithAlbum:(AlbumType)albumType;
 - (void)stopGame;
