@@ -9,6 +9,7 @@
 #import "HappyBabyTests.h"
 #import "CardManager.h"
 #import "GameEngine.h"
+#import "InternalAlbums.h"
 
 @interface HappyBabyTests(){
     CardManager * cardManager;
@@ -61,13 +62,35 @@
 //    NSLog(@"sound URL: %@", [randomSoundPath absoluteString]);
 //}
 
-- (void)testGameEngine{
-    NSArray * family = [NSArray arrayWithObjects:@"laolao", @"laoye", @"nainai", @"yeye", @"mama", @"baba", nil];
+- (void)testAlbum{
+    InternalAlbums * internalAlbums = [[InternalAlbums alloc] init];
+    STAssertNotNil(internalAlbums, nil);
+    NSArray * albums = internalAlbums.albums;
+    STAssertNotNil(albums, nil);
     
-    for (int i = 0; i < family.count; i++) {
-        BOOL ret = [cardManager newCardWithName:[family objectAtIndex:i] inAlbum:AlbumTypeFamily];
-        STAssertTrue(ret, nil);
+    NSLog(@"%d albums", albums.count);
+    for (int i = 0; i < albums.count; i++) {
+        Album * album = [albums objectAtIndex:i];
+        NSLog(@"album name %@", album.name);
+        NSLog(@"album type %d", album.type);
+        
+        NSArray * cards = [cardManager allCardsInAlbum:album.type];
+        NSLog(@"    %d cards in album", cards.count);
+        for (int j = 0; j < cards.count; j++) {
+            Card * card = [cards objectAtIndex:j];
+            NSLog(@"    card id   %d", [card.id integerValue]);
+            NSLog(@"    card name %@", card.name);
+        }
     }
+}
+
+- (void)testGameEngine{
+//    NSArray * family = [NSArray arrayWithObjects:@"laolao", @"laoye", @"nainai", @"yeye", @"mama", @"baba", nil];
+//    
+//    for (int i = 0; i < family.count; i++) {
+//        BOOL ret = [cardManager newCardWithName:[family objectAtIndex:i] inAlbum:AlbumTypeFamily];
+//        STAssertTrue(ret, nil);
+//    }
     
     GameEngine * engine = [[GameEngine alloc] init];
     [engine startGameWithAlbum:AlbumTypeFamily];

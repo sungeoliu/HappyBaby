@@ -15,14 +15,10 @@
 //
 
 #import "BaseManager.h"
+#import "Album.h"
 #import "Card.h"
 
 #define kCardEntity    @"Card"
-
-typedef enum {
-    AlbumTypeFamily = 1,
-    AlbumTypeAnimal
-}AlbumType;
 
 @interface CardManager : BaseManager
 
