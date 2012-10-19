@@ -51,6 +51,13 @@ static SoundManager *sSoundManager;
     }
 }
 
+- (void)stopSound {
+    if (nil != _audioPlayer) {
+        [_audioPlayer stop];
+        _audioPlayer = nil;
+    }
+}
+
 - (void)playBackgroundSound {
     NSURL *url = [[NSBundle mainBundle] URLForResource: @"backgroundMusic"
                                          withExtension: @"mp3"];

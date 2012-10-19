@@ -22,6 +22,7 @@ typedef enum {
 + (SoundManager *)defaultManager;
 
 - (void)playSound:(NSURL *)sound;
+- (void)stopSound;
 - (void)playBackgroundSound;
 - (void)stopBackgroundSound;
 
