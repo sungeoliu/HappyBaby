@@ -9,12 +9,29 @@
 #import "HomeViewController.h"
 #import "QuestionModeGameViewController.h"
 #import "CardManagerViewController.h"
+#import "GameEngine.h"
+#import "SoundManager.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () {
+    GameMode _gameMode;
+}
 
 @end
 
 @implementation HomeViewController
+@synthesize segmentedControl = _segmentedControl;
+
+- (void)registerHandleMessage {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleMessage:) name:kSoundPlaySuccessMessage object:nil];
+}
+
+- (void)handleMessage:(NSNotification *)note {
+    NSString * nib = [[NSString alloc] initWithFormat:@"QuestionMode%dGameViewController",_gameMode];
+    QuestionModeGameViewController * viewController = [[QuestionModeGameViewController alloc] initWithNibName:nib bundle:nil];
+    viewController.albumType = AlbumTypeFamily;
+    viewController.gameMode = _gameMode;
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,12 +45,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _gameMode = GameModeTwoOptions;
+    [self registerHandleMessage];
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,15 +84,17 @@
 }
 
 - (IBAction)startGame:(UIButton *)sender {
-    QuestionModeGameViewController * viewController = [[QuestionModeGameViewController alloc] initWithNibName:@"QuestionModeGameViewController" bundle:nil];
-    viewController.albumType = AlbumTypeFamily;
-    [self.navigationController pushViewController:viewController animated:YES];
+    [[SoundManager defaultManager] playSystemSound:SystemSoundReady];
 }
 
 - (IBAction)setCard:(UIButton *)sender {
     CardManagerViewController * viewController = [[CardManagerViewController alloc] initWithNibName:@"CardManagerViewController" bundle:nil];
     viewController.albumType = AlbumTypeFamily;
     [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (IBAction)gameModeChanged:(UISegmentedControl *)sender {
+    _gameMode = sender.selectedSegmentIndex + GameModeTwoOptions;
 }
 
 @end

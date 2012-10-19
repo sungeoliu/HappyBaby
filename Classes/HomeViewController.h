@@ -10,6 +10,9 @@
 
 @interface HomeViewController : UIViewController
 
+@property (weak, nonatomic) UISegmentedControl * segmentedControl;
+
 - (IBAction)startGame:(UIButton *)sender;
 - (IBAction)setCard:(UIButton *)sender;
+- (IBAction)gameModeChanged:(UISegmentedControl *)sender;
 @end
