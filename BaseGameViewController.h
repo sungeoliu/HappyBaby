@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CardManager.h"
+#import "Card.h"
 
 typedef enum {
     AnswerStateReady,
@@ -31,6 +32,8 @@ typedef enum {
 - (void)shakeView:(UIButton *)view;
 - (void)playFirework;
 - (void)stopFirework;
+- (Card *)cardWithId:(NSNumber *)cardId;
 
 - (IBAction)back:(id)sender;
+
 @end

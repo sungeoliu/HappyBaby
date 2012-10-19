@@ -44,6 +44,10 @@
 }
 
 - (void)playFirework {
+    if (nil != _fireworksEmitter) {
+        [_fireworksEmitter removeFromSuperlayer];
+    }
+    
     _fireworksEmitter = [CAEmitterLayer layer];
     CGRect viewBounds = self.view.layer.bounds;
     _fireworksEmitter.emitterPosition = CGPointMake(viewBounds.size.width/2.0, viewBounds.size.height);
@@ -117,6 +121,21 @@
 
 - (void)initCardsWithAlbum:(AlbumType)albumType {
     _cards = [[CardManager defaultManager] allCardsInAlbum:albumType];
+}
+
+- (Card *)cardWithId:(NSNumber *)cardId {
+    Card * card = nil;
+    if (nil != self.cards) {
+        NSInteger count = self.cards.count;
+        for (NSInteger index = 0; index < count; index++) {
+            card = [self.cards objectAtIndex:index];
+            if (card.id == cardId) {
+                break;
+            }
+        }
+    }
+    
+    return card;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
