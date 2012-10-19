@@ -76,7 +76,6 @@
 		E687F86016252D0100BA0AF0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E687F86216252D0100BA0AF0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E687F86616252D0100BA0AF0 /* HappyBaby-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HappyBaby-Info.plist"; sourceTree = "<group>"; };
-		E687F86816252D0100BA0AF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E687F86A16252D0100BA0AF0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E687F86C16252D0100BA0AF0 /* HappyBaby-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HappyBaby-Prefix.pch"; sourceTree = "<group>"; };
 		E687F86D16252D0100BA0AF0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,7 +87,6 @@
 		E687F87E16252D0200BA0AF0 /* HappyBabyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappyBabyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E687F87F16252D0200BA0AF0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E687F88816252D0200BA0AF0 /* HappyBabyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HappyBabyTests-Info.plist"; sourceTree = "<group>"; };
-		E687F88A16252D0200BA0AF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E687F88C16252D0200BA0AF0 /* HappyBabyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HappyBabyTests.h; sourceTree = "<group>"; };
 		E687F88D16252D0200BA0AF0 /* HappyBabyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappyBabyTests.m; sourceTree = "<group>"; };
 		E687F8DA16255E6600BA0AF0 /* LMLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LMLibrary.xcodeproj; path = ../LMLibrary/LMLibrary.xcodeproj; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 		E695E8A91631087400286730 /* InternalAlbums.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternalAlbums.m; sourceTree = "<group>"; };
 		E695E8AB1631089700286730 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
 		E695E8AC1631089700286730 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
-		E695E8B116312A6700286730 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Album.strings; sourceTree = "<group>"; };
 		E695E8B516312CA700286730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E695E8B616312CA700286730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Album.strings"; sourceTree = "<group>"; };
 		E695E8B716312CA700286730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -429,7 +426,6 @@
 		E687F86716252D0100BA0AF0 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E687F86816252D0100BA0AF0 /* en */,
 				E695E8B516312CA700286730 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
@@ -438,7 +434,6 @@
 		E687F88916252D0200BA0AF0 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E687F88A16252D0200BA0AF0 /* en */,
 				E695E8B716312CA700286730 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
@@ -447,7 +442,6 @@
 		E695E8B216312A6700286730 /* Album.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E695E8B116312A6700286730 /* en */,
 				E695E8B616312CA700286730 /* zh-Hans */,
 			);
 			name = Album.strings;
