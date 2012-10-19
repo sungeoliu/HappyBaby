@@ -20,6 +20,8 @@
 		3CD0C238162FF24F0023D217 /* ring.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C236162FF24F0023D217 /* ring.png */; };
 		3CD0C239162FF24F0023D217 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C237162FF24F0023D217 /* star.png */; };
 		3CD0C23B162FF76B0023D217 /* QuestionMode2GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C23A162FF76B0023D217 /* QuestionMode2GameViewController.xib */; };
+		3CD0C2461630ECB40023D217 /* QuestionMode3GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C2451630ECB40023D217 /* QuestionMode3GameViewController.xib */; };
+		3CD0C2481630F1060023D217 /* QuestionMode4GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C2471630F1060023D217 /* QuestionMode4GameViewController.xib */; };
 		3CD731261627F32D000432BD /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD731251627F32D000432BD /* SoundManager.m */; };
 		3CD731281627F35C000432BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD731271627F35C000432BD /* AVFoundation.framework */; };
 		3CD731321627F4B3000432BD /* BaseGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7312D1627F4B3000432BD /* BaseGameViewController.m */; };
@@ -104,6 +106,8 @@
 		3CD0C236162FF24F0023D217 /* ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring.png; path = Resouse/images/ring.png; sourceTree = "<group>"; };
 		3CD0C237162FF24F0023D217 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Resouse/images/star.png; sourceTree = "<group>"; };
 		3CD0C23A162FF76B0023D217 /* QuestionMode2GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionMode2GameViewController.xib; sourceTree = "<group>"; };
+		3CD0C2451630ECB40023D217 /* QuestionMode3GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionMode3GameViewController.xib; sourceTree = "<group>"; };
+		3CD0C2471630F1060023D217 /* QuestionMode4GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionMode4GameViewController.xib; sourceTree = "<group>"; };
 		3CD731241627F32D000432BD /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
 		3CD731251627F32D000432BD /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
 		3CD731271627F35C000432BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -221,6 +225,8 @@
 				3CD731471627F656000432BD /* HomeViewController.xib */,
 				3CD731361627F4D5000432BD /* QuestionModeGameViewController.xib */,
 				3CD0C23A162FF76B0023D217 /* QuestionMode2GameViewController.xib */,
+				3CD0C2451630ECB40023D217 /* QuestionMode3GameViewController.xib */,
+				3CD0C2471630F1060023D217 /* QuestionMode4GameViewController.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -476,6 +482,8 @@
 				3CD0C238162FF24F0023D217 /* ring.png in Resources */,
 				3CD0C239162FF24F0023D217 /* star.png in Resources */,
 				3CD0C23B162FF76B0023D217 /* QuestionMode2GameViewController.xib in Resources */,
+				3CD0C2461630ECB40023D217 /* QuestionMode3GameViewController.xib in Resources */,
+				3CD0C2481630F1060023D217 /* QuestionMode4GameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
