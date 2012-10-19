@@ -30,6 +30,7 @@
 @synthesize answerQuestionTimerInterval  = _answerQuestionTimerInterval;
 @synthesize gameMode = _gameMode;
 @synthesize delegate = _delegate;
+@synthesize currentQuestion = _currentQuestion;
 
 - (u_int8_t *)newSequenceTableWithLength:(NSInteger)length{
     // generate chaos-maker table.
@@ -120,53 +121,51 @@
     }
 }
 
+// 要求：
+// 1,选项卡片要随机生成。2,答案在选项数组
 - (NSArray *)optionsForCurrentQuestion{
     if (self.gameMode == GameModeUndefined) {
         self.gameMode = GameModeTwoOptions;
     }
     
-    // 从所有卡片中选择其中的N张，所以要根据卡片总数产生随机数组。
+    // 随机选择选项数目m张卡片。
+    // 先根据卡片总数n产生同样长度的随机数组，取前m张，作为备选错误答案。
     u_int8_t * optionSequence = [self newSequenceTableWithLength:_cards.count];
     
-    // 根据游戏模式，生成对应个数的选项。
+    // 初始化选项数组。
     NSMutableArray * optionsArray = [NSMutableArray arrayWithCapacity:self.gameMode];
     for (int i = 0; i < self.gameMode; i ++) {
         [optionsArray addObject:@"empty"];
     }
     
-    // 先随机确定答案卡片的位置。
+    // 随机确定答案卡片的位置。
     Card * answerCard = [self currentQuestionCard];
+    // 用刚才生成的随机数组的最后一项的值（随即数），对n取模，得到小于n的一个随机数，作为正确答案的位置。
     int answerIndex = optionSequence[_cards.count - 1] % self.gameMode;
     NSLog(@"anser index %d id %d", answerIndex, [answerCard.id integerValue]);
     [optionsArray replaceObjectAtIndex:answerIndex withObject:answerCard.id];
-//    [optionsArray insertObject:answerCard.id atIndex:answerIndex];
     
-    // 再依次增加两张非答案的卡片。
+    // 再依次增加n-1张错误答案的卡片。
     int optionIndex = 0;
     int optionCount = 1;
     for (int i = 0; i < _cards.count && optionCount < self.gameMode; i++) {
         int index = optionSequence[i];
         Card * optionCard = [_cards objectAtIndex:index];
         if ([optionCard.id isEqualToNumber:answerCard.id]) {
-            // 跳过答案卡片，只会跳一次。
+            // 随机数组已经包含答案卡片，所以跳过答案卡片（只会跳一次）。
             continue;
         }
         
-        // 跳过已经被答案卡片占用的位置。
+        // 跳过选项数组中已经占用答案卡片。
         if (optionIndex == answerIndex) {
             optionIndex++;
         }
         
-//        NSLog(@"card id %d", [optionCard.id integerValue]);
         [optionsArray replaceObjectAtIndex:optionIndex++ withObject:optionCard.id];
         optionCount ++;
     }
     
     free(optionSequence);
-    
-    for (int i = 0; i < self.gameMode; i++) {
-        NSLog(@"Option %d: %d", i, [[optionsArray objectAtIndex:i] integerValue]);
-    }
     
     return optionsArray;
 }
@@ -192,14 +191,12 @@
     Card * card = [self currentQuestionCard];
     NSLog(@"new question for %@ with id %d", card.name, [card.id integerValue]);
     
-    NSString * prompt = [NSString stringWithFormat:@"%@ 在哪里？", card.name];
-    NSURL * soundURL = [NSURL URLWithString:card.pronunciation];
     NSArray * options = [self optionsForCurrentQuestion];
-    Question * question = [[Question alloc] initWithPrompt:prompt withVoice:soundURL withOptions:options];
+    self.currentQuestion = [[Question alloc] initWithAnswerCard:card withOptions:options];
     
     if (self.delegate != nil) {
         if ([self.delegate respondsToSelector:@selector(gotQuestion:)]) {
-            [self.delegate performSelector:@selector(gotQuestion:) withObject:question];
+            [self.delegate performSelector:@selector(gotQuestion:) withObject:self.currentQuestion];
         }
     }
     
@@ -221,8 +218,6 @@
             [self.delegate performSelector:@selector(wrongAnswerForObject:) withObject:card.id];
         }
     }
-    
-//    [self stopTimer];回答失败时继续计时，直到定时器超时。
 }
 
 @end

@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class Card;
+
 @interface Question : NSObject
 
 @property (nonatomic, strong) NSString * prompt;
 @property (nonatomic, strong) NSURL * voice;
 @property (nonatomic, strong) NSArray * options;
 
-- (id)initWithPrompt:(NSString *)prompt withVoice:(NSURL *)voice withOptions:(NSArray *)options;
+- (id)initWithAnswerCard:(Card *)card withOptions:(NSArray *)options;
+- (void)debugPrint;
 
 @end
