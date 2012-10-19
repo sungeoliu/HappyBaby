@@ -22,6 +22,17 @@
 		3CD0C23B162FF76B0023D217 /* QuestionMode2GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C23A162FF76B0023D217 /* QuestionMode2GameViewController.xib */; };
 		3CD0C2461630ECB40023D217 /* QuestionMode3GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C2451630ECB40023D217 /* QuestionMode3GameViewController.xib */; };
 		3CD0C2481630F1060023D217 /* QuestionMode4GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C2471630F1060023D217 /* QuestionMode4GameViewController.xib */; };
+		3CD0C24D163102180023D217 /* QuestionMode1GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C24B163102180023D217 /* QuestionMode1GameViewController.xib */; };
+		3CD0C27516313A670023D217 /* recordingBkg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C26B16313A670023D217 /* recordingBkg.png */; };
+		3CD0C27616313A670023D217 /* recordingBkg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C26C16313A670023D217 /* recordingBkg@2x.png */; };
+		3CD0C27716313A670023D217 /* recordingSignal001.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C26D16313A670023D217 /* recordingSignal001.png */; };
+		3CD0C27816313A670023D217 /* recordingSignal002.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C26E16313A670023D217 /* recordingSignal002.png */; };
+		3CD0C27916313A670023D217 /* recordingSignal003.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C26F16313A670023D217 /* recordingSignal003.png */; };
+		3CD0C27A16313A670023D217 /* recordingSignal004.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C27016313A670023D217 /* recordingSignal004.png */; };
+		3CD0C27B16313A670023D217 /* recordingSignal005.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C27116313A670023D217 /* recordingSignal005.png */; };
+		3CD0C27C16313A670023D217 /* recordingSignal006.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C27216313A670023D217 /* recordingSignal006.png */; };
+		3CD0C27D16313A670023D217 /* recordingSignal007.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C27316313A670023D217 /* recordingSignal007.png */; };
+		3CD0C27E16313A670023D217 /* recordingSignal008.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C27416313A670023D217 /* recordingSignal008.png */; };
 		3CD731261627F32D000432BD /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD731251627F32D000432BD /* SoundManager.m */; };
 		3CD731281627F35C000432BD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD731271627F35C000432BD /* AVFoundation.framework */; };
 		3CD731321627F4B3000432BD /* BaseGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD7312D1627F4B3000432BD /* BaseGameViewController.m */; };
@@ -59,13 +70,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3C0CE29B162E94A500E86063 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E687F84F16252D0100BA0AF0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E687F87D16252D0200BA0AF0;
-			remoteInfo = HappyBabyTests;
-		};
 		E687F88416252D0200BA0AF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E687F84F16252D0100BA0AF0 /* Project object */;
@@ -108,6 +112,17 @@
 		3CD0C23A162FF76B0023D217 /* QuestionMode2GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionMode2GameViewController.xib; sourceTree = "<group>"; };
 		3CD0C2451630ECB40023D217 /* QuestionMode3GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionMode3GameViewController.xib; sourceTree = "<group>"; };
 		3CD0C2471630F1060023D217 /* QuestionMode4GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionMode4GameViewController.xib; sourceTree = "<group>"; };
+		3CD0C24B163102180023D217 /* QuestionMode1GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuestionMode1GameViewController.xib; path = HappyBaby/QuestionMode1GameViewController.xib; sourceTree = "<group>"; };
+		3CD0C26B16313A670023D217 /* recordingBkg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recordingBkg.png; path = Resouse/images/recordingBkg.png; sourceTree = "<group>"; };
+		3CD0C26C16313A670023D217 /* recordingBkg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "recordingBkg@2x.png"; path = "Resouse/images/recordingBkg@2x.png"; sourceTree = "<group>"; };
+		3CD0C26D16313A670023D217 /* recordingSignal001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recordingSignal001.png; path = Resouse/images/recordingSignal001.png; sourceTree = "<group>"; };
+		3CD0C26E16313A670023D217 /* recordingSignal002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recordingSignal002.png; path = Resouse/images/recordingSignal002.png; sourceTree = "<group>"; };
+		3CD0C26F16313A670023D217 /* recordingSignal003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recordingSignal003.png; path = Resouse/images/recordingSignal003.png; sourceTree = "<group>"; };
+		3CD0C27016313A670023D217 /* recordingSignal004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recordingSignal004.png; path = Resouse/images/recordingSignal004.png; sourceTree = "<group>"; };
+		3CD0C27116313A670023D217 /* recordingSignal005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recordingSignal005.png; path = Resouse/images/recordingSignal005.png; sourceTree = "<group>"; };
+		3CD0C27216313A670023D217 /* recordingSignal006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recordingSignal006.png; path = Resouse/images/recordingSignal006.png; sourceTree = "<group>"; };
+		3CD0C27316313A670023D217 /* recordingSignal007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recordingSignal007.png; path = Resouse/images/recordingSignal007.png; sourceTree = "<group>"; };
+		3CD0C27416313A670023D217 /* recordingSignal008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recordingSignal008.png; path = Resouse/images/recordingSignal008.png; sourceTree = "<group>"; };
 		3CD731241627F32D000432BD /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
 		3CD731251627F32D000432BD /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
 		3CD731271627F35C000432BD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -220,6 +235,7 @@
 		3CD7312A1627F3FF000432BD /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				3CD0C24B163102180023D217 /* QuestionMode1GameViewController.xib */,
 				3C0CE25F162BF6D100E86063 /* CardAudioRecordViewController.xib */,
 				3C475A6C1628FB540027A4FD /* CardManagerViewController.xib */,
 				3CD731471627F656000432BD /* HomeViewController.xib */,
@@ -253,6 +269,16 @@
 		3CD731421627F5EB000432BD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3CD0C26B16313A670023D217 /* recordingBkg.png */,
+				3CD0C26C16313A670023D217 /* recordingBkg@2x.png */,
+				3CD0C26D16313A670023D217 /* recordingSignal001.png */,
+				3CD0C26E16313A670023D217 /* recordingSignal002.png */,
+				3CD0C26F16313A670023D217 /* recordingSignal003.png */,
+				3CD0C27016313A670023D217 /* recordingSignal004.png */,
+				3CD0C27116313A670023D217 /* recordingSignal005.png */,
+				3CD0C27216313A670023D217 /* recordingSignal006.png */,
+				3CD0C27316313A670023D217 /* recordingSignal007.png */,
+				3CD0C27416313A670023D217 /* recordingSignal008.png */,
 				3CD0C236162FF24F0023D217 /* ring.png */,
 				3CD0C237162FF24F0023D217 /* star.png */,
 				3CD731431627F5FD000432BD /* father.png */,
@@ -390,7 +416,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				3C0CE29C162E94A500E86063 /* PBXTargetDependency */,
 				E687F8E416255E7900BA0AF0 /* PBXTargetDependency */,
 			);
 			name = HappyBaby;
@@ -484,6 +509,17 @@
 				3CD0C23B162FF76B0023D217 /* QuestionMode2GameViewController.xib in Resources */,
 				3CD0C2461630ECB40023D217 /* QuestionMode3GameViewController.xib in Resources */,
 				3CD0C2481630F1060023D217 /* QuestionMode4GameViewController.xib in Resources */,
+				3CD0C24D163102180023D217 /* QuestionMode1GameViewController.xib in Resources */,
+				3CD0C27516313A670023D217 /* recordingBkg.png in Resources */,
+				3CD0C27616313A670023D217 /* recordingBkg@2x.png in Resources */,
+				3CD0C27716313A670023D217 /* recordingSignal001.png in Resources */,
+				3CD0C27816313A670023D217 /* recordingSignal002.png in Resources */,
+				3CD0C27916313A670023D217 /* recordingSignal003.png in Resources */,
+				3CD0C27A16313A670023D217 /* recordingSignal004.png in Resources */,
+				3CD0C27B16313A670023D217 /* recordingSignal005.png in Resources */,
+				3CD0C27C16313A670023D217 /* recordingSignal006.png in Resources */,
+				3CD0C27D16313A670023D217 /* recordingSignal007.png in Resources */,
+				3CD0C27E16313A670023D217 /* recordingSignal008.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,11 +583,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3C0CE29C162E94A500E86063 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E687F87D16252D0200BA0AF0 /* HappyBabyTests */;
-			targetProxy = 3C0CE29B162E94A500E86063 /* PBXContainerItemProxy */;
-		};
 		E687F88516252D0200BA0AF0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E687F85716252D0100BA0AF0 /* HappyBaby */;
