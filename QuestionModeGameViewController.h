@@ -11,20 +11,10 @@
 
 @interface QuestionModeGameViewController : BaseGameViewController<GameEngineDelegate,UIAlertViewDelegate>
 
-@property(weak, nonatomic) IBOutlet UIButton * button1;
-@property(weak, nonatomic) IBOutlet UIButton * button2;
-@property(weak, nonatomic) IBOutlet UIButton * button3;
-@property(weak, nonatomic) IBOutlet UIButton * button4;
-@property(weak, nonatomic) IBOutlet UIButton * button5;
-@property(weak, nonatomic) IBOutlet UIButton * button6;
-@property(weak, nonatomic) IBOutlet UILabel * label1;
-@property(weak, nonatomic) IBOutlet UILabel * label2;
-@property(weak, nonatomic) IBOutlet UILabel * label3;
-@property(weak, nonatomic) IBOutlet UILabel * label4;
-@property(weak, nonatomic) IBOutlet UILabel * label5;
-@property(weak, nonatomic) IBOutlet UILabel * label6;
 @property(weak, nonatomic) IBOutlet UILabel * labelInfo;
 @property(weak, nonatomic) IBOutlet UILabel * labelCountdown;
+
+@property(nonatomic) GameMode gameMode;
 
 - (IBAction)checkAnswer:(UIButton *)sender;
 

@@ -12,7 +12,9 @@
 @interface QuestionModeGameViewController () {
     GameEngine * _gameEngine;
     SoundManager * _soundManager;
+    NSInteger  _curSelectCardIndex;
     NSNumber * _curSelectCardId;
+    NSArray * _options;
 }
 
 @end
@@ -43,65 +45,49 @@
     return YES;
 }
 
-- (void)initView {
-    if (nil != self.cards && self.cards.count == kCardSize) {
+- (void)initViewWithOptions:(NSArray *)options{
+    if (nil != options) {
+        _options = options;
         UIImage * image;
         NSURL * url;
         NSData * data;
+        NSNumber * cardId;
+        Card * card;
+        UIButton * button;
+        UILabel * label;
         
-        Card * card = [self.cards objectAtIndex:0];
-        _button1.tag = [card.id integerValue];
-        url = [[NSURL alloc] initWithString:card.image];
-        data = [NSData dataWithContentsOfURL:url];
-        image = [UIImage imageWithData:data];
-        [_button1 setBackgroundImage:image forState:UIControlStateNormal];
-        _label1.text = card.name;
-        
-        card = [self.cards objectAtIndex:1];
-        _button2.tag = [card.id integerValue];
-        url = [[NSURL alloc] initWithString:card.image];
-        data = [NSData dataWithContentsOfURL:url];
-        image = [UIImage imageWithData:data];
-        [_button2 setBackgroundImage:image forState:UIControlStateNormal];
-        _label2.text = card.name;
-        
-        card = [self.cards objectAtIndex:2];
-        _button3.tag = [card.id integerValue];
-        url = [[NSURL alloc] initWithString:card.image];
-        data = [NSData dataWithContentsOfURL:url];
-        image = [UIImage imageWithData:data];
-        [_button3 setBackgroundImage:image forState:UIControlStateNormal];
-        _label3.text = card.name;
-        
-        card = [self.cards objectAtIndex:3];
-        _button4.tag = [card.id integerValue];
-        url = [[NSURL alloc] initWithString:card.image];
-        data = [NSData dataWithContentsOfURL:url];
-        image = [UIImage imageWithData:data];
-        [_button4 setBackgroundImage:image forState:UIControlStateNormal];
-        _label4.text = card.name;
-        
-        card = [self.cards objectAtIndex:4];
-        _button5.tag = [card.id integerValue];
-        url = [[NSURL alloc] initWithString:card.image];
-        data = [NSData dataWithContentsOfURL:url];
-        image = [UIImage imageWithData:data];
-        [_button5 setBackgroundImage:image forState:UIControlStateNormal];
-        _label5.text = card.name;
-        
-        card = [self.cards objectAtIndex:5];
-        _button6.tag = [card.id integerValue];
-        url = [[NSURL alloc] initWithString:card.image];
-        data = [NSData dataWithContentsOfURL:url];
-        image = [UIImage imageWithData:data];
-        [_button6 setBackgroundImage:image forState:UIControlStateNormal];
-        _label6.text = card.name;
+        NSInteger count = options.count;
+        for (NSInteger index = 0; index < count; index++) {
+            cardId = [options objectAtIndex:index];
+            card = [self cardWithId:cardId];
+            
+            button = (UIButton *)[self.view viewWithTag:index + 1];
+            url = [[NSURL alloc] initWithString:card.image];
+            data = [NSData dataWithContentsOfURL:url];
+            image = [UIImage imageWithData:data];
+            [button setBackgroundImage:image forState:UIControlStateNormal];
+            
+            label = (UILabel *)[self.view viewWithTag:-1 - index];
+            label.text = card.name;
+        }
     }
 }
 
-- (void)shakeWithButtonTag:(NSNumber *)tagId {
-    NSInteger intTagId = [tagId integerValue];
-    UIButton * button = (UIButton *)[self.view viewWithTag:intTagId];
+- (NSInteger)buttonTagWithCardId:(NSNumber *)cardId {
+    if (nil != _options) {
+        NSInteger count = _options.count;
+        for (NSInteger index = 0; index < count; index++) {
+            if (cardId == [_options objectAtIndex:index]) {
+                return index + 1;
+            }
+        }
+    }
+    
+    return 0;
+}
+
+- (void)shakeWithButtonTag:(NSInteger)tagId {
+    UIButton * button = (UIButton *)[self.view viewWithTag:tagId];
     [self shakeView:button];
 }
 
@@ -117,8 +103,6 @@
             [_gameEngine newQuestion];
             break;
         case AnswerStateReady:
-            [_gameEngine startGameWithAlbum:self.albumType];
-            [_gameEngine newQuestion];
         default:
             break;
     }
@@ -140,22 +124,22 @@
 {
     [super viewDidLoad];
     _gameEngine.answerQuestionTimerInterval = 10;
-    // Do any additional setup after loading the view from its nib.
+    _gameEngine.gameMode = self.gameMode;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if ([self checkCards]) {
-        [self initView];
         self.answerState = AnswerStateReady;
-        [_soundManager playSystemSound:SystemSoundReady];
+        [_gameEngine startGameWithAlbum:self.albumType];
+        [_gameEngine newQuestion];
+
         [_soundManager playBackgroundSound];
     }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
     [self registerHandleMessage];
 }
 
@@ -174,8 +158,11 @@
 }
 
 - (IBAction)checkAnswer:(UIButton *)sender {
-    _curSelectCardId = [NSNumber numberWithInteger:sender.tag];
-    [_gameEngine checkAnswer:[NSNumber numberWithInteger:sender.tag]];
+    if (nil != _options) {
+        _curSelectCardIndex = sender.tag;
+        _curSelectCardId = [_options objectAtIndex:sender.tag - 1 ];
+        [_gameEngine checkAnswer:_curSelectCardId];
+    }
 }
 
 -(NSUInteger)supportedInterfaceOrientations {
@@ -187,13 +174,13 @@
 }
 
 #pragma GameEngineDelegate
-- (void)gotQuestion:(NSString *)question withVoice:(NSURL *)voice {
+- (void)gotQuestion:(Question *)question {
     if (nil != question) {
-        [self.labelInfo setText:question];
+        [self.labelInfo setText:question.prompt];
     }
-    
+    [self initViewWithOptions:question.options];
     self.answerState = AnswerStateWait;
-    [_soundManager playSound:voice];
+    [_soundManager playSound:question.voice];
 }
 
 - (void)rightAnswerForObject:(NSNumber *)objectId {
@@ -205,13 +192,13 @@
 - (void)wrongAnswerForObject:(NSNumber *)objectId {
     self.answerState = AnswerStateWrong;
     [_soundManager playSystemSound:SystemSoundWrong];
-    [self shakeWithButtonTag:_curSelectCardId];
+    [self shakeWithButtonTag:_curSelectCardIndex];
 }
 
 - (void)answerTimeout:(NSNumber *)objectId {
     self.answerState = AnswerStateTimeout;
     [_soundManager playSystemSound:SystemSoundWrong];
-    [self shakeWithButtonTag:objectId];
+    [self shakeWithButtonTag:[self buttonTagWithCardId:objectId]];
 }
 
 - (void)questionTimerCountdown:(NSNumber *) secondsLeft {
