@@ -32,6 +32,9 @@
 		E687F9141626B97A00BA0AF0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F9131626B97A00BA0AF0 /* Security.framework */; };
 		E687F920162C0C5A00BA0AF0 /* libLMLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E687F8E216255E6700BA0AF0 /* libLMLibrary.a */; };
 		E695E8A7162FB54900286730 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = E695E8A6162FB54900286730 /* Question.m */; };
+		E695E8AA1631087400286730 /* InternalAlbums.m in Sources */ = {isa = PBXBuildFile; fileRef = E695E8A91631087400286730 /* InternalAlbums.m */; };
+		E695E8AD1631089700286730 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = E695E8AC1631089700286730 /* Album.m */; };
+		E695E8B016312A6700286730 /* Album.strings in Resources */ = {isa = PBXBuildFile; fileRef = E695E8B216312A6700286730 /* Album.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,14 @@
 		E687F9131626B97A00BA0AF0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E695E8A5162FB54900286730 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		E695E8A6162FB54900286730 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		E695E8A81631087400286730 /* InternalAlbums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternalAlbums.h; sourceTree = "<group>"; };
+		E695E8A91631087400286730 /* InternalAlbums.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternalAlbums.m; sourceTree = "<group>"; };
+		E695E8AB1631089700286730 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		E695E8AC1631089700286730 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		E695E8B116312A6700286730 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Album.strings; sourceTree = "<group>"; };
+		E695E8B516312CA700286730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E695E8B616312CA700286730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Album.strings"; sourceTree = "<group>"; };
+		E695E8B716312CA700286730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +195,7 @@
 				E687F87016252D0100BA0AF0 /* Default.png */,
 				E687F87216252D0100BA0AF0 /* Default@2x.png */,
 				E687F87416252D0100BA0AF0 /* Default-568h@2x.png */,
+				E695E8B216312A6700286730 /* Album.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -216,6 +228,10 @@
 				E687F9111626AC2F00BA0AF0 /* Card.m */,
 				E687F8E616255EC700BA0AF0 /* CardManager.h */,
 				E687F8E716255EC700BA0AF0 /* CardManager.m */,
+				E695E8AB1631089700286730 /* Album.h */,
+				E695E8AC1631089700286730 /* Album.m */,
+				E695E8A81631087400286730 /* InternalAlbums.h */,
+				E695E8A91631087400286730 /* InternalAlbums.m */,
 			);
 			name = DataStore;
 			sourceTree = "<group>";
@@ -295,6 +311,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = E687F84D16252D0100BA0AF0;
 			productRefGroup = E687F85916252D0100BA0AF0 /* Products */;
@@ -332,6 +349,7 @@
 				E687F87116252D0100BA0AF0 /* Default.png in Resources */,
 				E687F87316252D0100BA0AF0 /* Default@2x.png in Resources */,
 				E687F87516252D0100BA0AF0 /* Default-568h@2x.png in Resources */,
+				E695E8B016312A6700286730 /* Album.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +392,8 @@
 				E687F8EF1625663E00BA0AF0 /* GameEngine.m in Sources */,
 				E687F9121626AC2F00BA0AF0 /* Card.m in Sources */,
 				E695E8A7162FB54900286730 /* Question.m in Sources */,
+				E695E8AA1631087400286730 /* InternalAlbums.m in Sources */,
+				E695E8AD1631089700286730 /* Album.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +430,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E687F86816252D0100BA0AF0 /* en */,
+				E695E8B516312CA700286730 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -418,8 +439,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				E687F88A16252D0200BA0AF0 /* en */,
+				E695E8B716312CA700286730 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E695E8B216312A6700286730 /* Album.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E695E8B116312A6700286730 /* en */,
+				E695E8B616312CA700286730 /* zh-Hans */,
+			);
+			name = Album.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
