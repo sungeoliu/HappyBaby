@@ -65,6 +65,7 @@
     if (nil != _card.pronunciation) {
         _url = [[NSURL alloc] initWithString:_card.pronunciation];
     }
+    [self initRecordingImage];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,27 +74,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-// FIMX 获取URL地址
 - (IBAction)playSound:(UIButton *)sender {
     if (nil != _card) {
         [_soundManager playSound:_url];
     }
 }
 
-// FIMX 获取URL地址
 - (IBAction)recordSound:(UIButton *)sender {
     _url = [_cardManager newSoundUrl];
     [_soundManager recordSound:_url];
+    [self playAnimation];
 }
 
 - (IBAction)stopRecordSound:(UIButton *)sender {
+    [self stopAnimation];
     [_soundManager stopRecordSound];
-}
-
-// FIMX 保存数据库
-- (IBAction)save:(UIButton *)sender {
     [_cardManager modifyCard:_card withPronunciation:_url];
 }
+
 
 - (IBAction)close:(UIButton *)sender {
     [self.view removeFromSuperview];

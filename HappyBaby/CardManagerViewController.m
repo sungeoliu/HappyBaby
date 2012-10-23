@@ -72,9 +72,9 @@
     Card * card = [self.cards objectAtIndex:[_curSelectCardIndex integerValue]];
     viewController.card = card;
 
-    CGRect fream = CGRectMake(50.0, 50.0, 350.0, 200.0);
+    CGRect fream = CGRectMake(100.0, 50.0, 284.0, 230.0);
     viewController.view.frame = fream;
-    viewController.view.alpha = 0.8;
+    viewController.view.alpha = 1;
         
     [self.view addSubview:viewController.view];
     [self addChildViewController:viewController];
