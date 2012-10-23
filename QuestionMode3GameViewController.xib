@@ -39,7 +39,7 @@
 					<object class="IBUILabel" id="467353086">
 						<reference key="NSNextResponder" ref="955816079"/>
 						<int key="NSvFlags">295</int>
-						<string key="NSFrame">{{10, 8}, {568, 21}}</string>
+						<string key="NSFrame">{{8, 8}, {480, 21}}</string>
 						<reference key="NSSuperview" ref="955816079"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="467682761"/>
@@ -108,7 +108,7 @@
 					<object class="IBUILabel" id="895396109">
 						<reference key="NSNextResponder" ref="955816079"/>
 						<int key="NSvFlags">289</int>
-						<string key="NSFrame">{{503, 5}, {42, 21}}</string>
+						<string key="NSFrame">{{415, 5}, {42, 21}}</string>
 						<reference key="NSSuperview" ref="955816079"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1045437696"/>
@@ -130,7 +130,7 @@
 					<object class="IBUIButton" id="1045437696">
 						<reference key="NSNextResponder" ref="955816079"/>
 						<int key="NSvFlags">294</int>
-						<string key="NSFrame">{{10, 60}, {150, 180}}</string>
+						<string key="NSFrame">{{8, 85}, {150, 150}}</string>
 						<reference key="NSSuperview" ref="955816079"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="459433190"/>
@@ -157,7 +157,7 @@
 					<object class="IBUILabel" id="53408709">
 						<reference key="NSNextResponder" ref="955816079"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{66, 266}, {63, 21}}</string>
+						<string key="NSFrame">{{42, 272}, {63, 21}}</string>
 						<reference key="NSSuperview" ref="955816079"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="849018921"/>
@@ -179,7 +179,7 @@
 					<object class="IBUIButton" id="459433190">
 						<reference key="NSNextResponder" ref="955816079"/>
 						<int key="NSvFlags">295</int>
-						<string key="NSFrame">{{209, 60}, {150, 180}}</string>
+						<string key="NSFrame">{{166, 85}, {150, 150}}</string>
 						<reference key="NSSuperview" ref="955816079"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="301688738"/>
@@ -203,7 +203,7 @@
 					<object class="IBUILabel" id="849018921">
 						<reference key="NSNextResponder" ref="955816079"/>
 						<int key="NSvFlags">295</int>
-						<string key="NSFrame">{{270, 266}, {63, 21}}</string>
+						<string key="NSFrame">{{215, 272}, {53, 21}}</string>
 						<reference key="NSSuperview" ref="955816079"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="70562541"/>
@@ -225,10 +225,9 @@
 					<object class="IBUILabel" id="70562541">
 						<reference key="NSNextResponder" ref="955816079"/>
 						<int key="NSvFlags">289</int>
-						<string key="NSFrame">{{467, 266}, {66, 21}}</string>
+						<string key="NSFrame">{{373, 272}, {66, 21}}</string>
 						<reference key="NSSuperview" ref="955816079"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -247,7 +246,7 @@
 					<object class="IBUIButton" id="301688738">
 						<reference key="NSNextResponder" ref="955816079"/>
 						<int key="NSvFlags">291</int>
-						<string key="NSFrame">{{409, 60}, {150, 180}}</string>
+						<string key="NSFrame">{{324, 85}, {150, 150}}</string>
 						<reference key="NSSuperview" ref="955816079"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="53408709"/>
@@ -269,7 +268,7 @@
 						<reference key="IBUIFont" ref="954930097"/>
 					</object>
 				</array>
-				<string key="NSFrame">{{0, 20}, {568, 300}}</string>
+				<string key="NSFrameSize">{480, 320}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="467353086"/>
@@ -280,7 +279,6 @@
 						<int key="NSID">2</int>
 					</object>
 				</object>
-				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 					<int key="IBUIInterfaceOrientation">3</int>
 					<int key="interfaceOrientation">3</int>
@@ -294,13 +292,13 @@
 							<integer value="3"/>
 						</array>
 						<array key="dict.values">
-							<string>{320, 568}</string>
-							<string>{568, 320}</string>
+							<string>{320, 480}</string>
+							<string>{480, 320}</string>
 						</array>
 					</object>
 					<string key="IBUITargetRuntime">IBCocoaTouchFramework</string>
-					<string key="IBUIDisplayName">Retina 4 Full Screen</string>
-					<int key="IBUIType">2</int>
+					<string key="IBUIDisplayName">Retina 3.5 Full Screen</string>
+					<int key="IBUIType">0</int>
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
@@ -391,13 +389,13 @@
 						<int key="objectID">3</int>
 						<reference key="object" ref="955816079"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="1045437696"/>
 							<reference ref="895396109"/>
 							<reference ref="467682761"/>
 							<reference ref="467353086"/>
 							<reference ref="301688738"/>
-							<reference ref="459433190"/>
+							<reference ref="1045437696"/>
 							<reference ref="53408709"/>
+							<reference ref="459433190"/>
 							<reference ref="849018921"/>
 							<reference ref="70562541"/>
 						</array>
@@ -503,17 +501,25 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">QuestionModeGameViewController</string>
 					<string key="superclassName">BaseGameViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">checkAnswer:</string>
-						<string key="NS.object.0">UIButton</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">checkAnswer:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="back:">id</string>
+						<string key="checkAnswer:">UIButton</string>
+						<string key="newCard:">UIButton</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="back:">
+							<string key="name">back:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="checkAnswer:">
 							<string key="name">checkAnswer:</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
-					</object>
+						<object class="IBActionInfo" key="newCard:">
+							<string key="name">newCard:</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="labelCountdown">UILabel</string>
 						<string key="labelInfo">UILabel</string>
