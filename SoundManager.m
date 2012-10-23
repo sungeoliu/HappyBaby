@@ -101,7 +101,12 @@ static SoundManager *sSoundManager;
 - (void)stopRecordSound {
     if (nil != _audioRecorder) {
         [_audioRecorder stop];
-        _audioRecorder = nil;
+    }
+}
+
+- (void)cancelRecord {
+    if (nil != _audioRecorder) {
+        [_audioRecorder deleteRecording];
     }
 }
 

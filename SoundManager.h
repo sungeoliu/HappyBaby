@@ -28,6 +28,7 @@ typedef enum {
 
 - (void)recordSound:(NSURL *)sound;
 - (void)stopRecordSound;
+- (void)cancelRecord;
 
 - (void)playSystemSound:(SystemSound) sound;
 
