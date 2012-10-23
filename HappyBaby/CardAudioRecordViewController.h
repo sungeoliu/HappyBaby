@@ -17,7 +17,6 @@
 - (IBAction)recordSound:(UIButton *)sender;
 - (IBAction)stopRecordSound:(UIButton *)sender;
 - (IBAction)playSound:(UIButton *)sender;
-- (IBAction)save:(UIButton *)sender;
 - (IBAction)close:(UIButton *)sender;
 
 @end
