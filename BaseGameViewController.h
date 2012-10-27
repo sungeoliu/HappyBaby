@@ -34,6 +34,8 @@ typedef enum {
 - (void)stopFirework;
 - (Card *)cardWithId:(NSNumber *)cardId;
 
+- (void)showShadowWithButton:(UIButton *)button;
+
 - (IBAction)back:(id)sender;
 
 @end

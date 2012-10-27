@@ -17,6 +17,14 @@
 
 @implementation BaseGameViewController
 
+- (void)showShadowWithButton:(UIButton *)button {
+    button.layer.masksToBounds = NO;
+    button.layer.shouldRasterize = YES;
+    button.layer.shadowOffset = CGSizeMake(1.0, 2.0);
+    button.layer.shadowOpacity = 0.7;
+    button.layer.shadowColor =  [UIColor blackColor].CGColor;
+}
+
 -(void)wobbleEnded:(NSString *)animationId finished:(NSNumber *)finished context:(void *)context{
     if([finished boolValue]){
         UIView * item = (__bridge UIView *)context;
