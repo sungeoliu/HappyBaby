@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 #define kSoundPlaySuccessMessage  @"kSoundPlaySuccess"
+#define kSoundRecordSuccessMessage @"kSoundRecordSuccess"
 typedef enum {
     SystemSoundReady = 0,
     SystemSoundRight = 1,

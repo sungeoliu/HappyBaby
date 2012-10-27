@@ -101,6 +101,9 @@ static SoundManager *sSoundManager;
 - (void)stopRecordSound {
     if (nil != _audioRecorder) {
         [_audioRecorder stop];
+        NSNotification * notification = nil;
+        notification = [NSNotification notificationWithName:kSoundRecordSuccessMessage object:nil];
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
     }
 }
 
