@@ -88,8 +88,8 @@
 
 - (IBAction)stopRecordSound:(UIButton *)sender {
     [self stopAnimation];
-    [_soundManager stopRecordSound];
     [_cardManager modifyCard:_card withPronunciation:_url];
+    [_soundManager stopRecordSound];
 }
 
 
