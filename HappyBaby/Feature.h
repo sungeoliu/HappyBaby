@@ -12,5 +12,10 @@
 
 + (Feature *)defaultFeature;
 
-- (UIColor *) pinkColor;
+- (UIColor *)pinkColor;
+- (void)showShadowWithButton:(UIButton *)button;
+- (void)setRadiusWithButon:(UIButton *)button;
+- (void)setRadiusWithView:(UIView *)view;
+
+- (UIImage *)cropperImage:(UIImage *)image withRect:(CGRect)rect;
 @end
