@@ -1,18 +1,18 @@
 //
-//  CardManagerViewController.m
+//  CardContentViewController.m
 //  HappyBaby
 //
 //  Created by lixiaoyu on 12-10-29.
 //  Copyright (c) 2012年 Liu&Mao. All rights reserved.
 //
 
-#import "CardManagerViewController.h"
+#import "CardContentViewController.h"
 
-@interface CardManagerViewController ()
+@interface CardContentViewController ()
 
 @end
 
-@implementation CardManagerViewController
+@implementation CardContentViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

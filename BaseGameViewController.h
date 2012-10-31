@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CardManager.h"
 #import "Card.h"
+#import "GameEngine.h"
+#import "SoundManager.h"
 
 typedef enum {
     AnswerStateReady,
@@ -22,19 +24,30 @@ typedef enum {
 #define kImageViewTagOrigin 6
 #define kLabelTagOrigin 12
 
-@interface BaseGameViewController : UIViewController
+@interface BaseGameViewController : UIViewController <GameEngineDelegate>
+
+@property(weak, nonatomic) IBOutlet UILabel * labelInfo;
 
 @property (strong, nonatomic)  NSArray * cards;
 @property (nonatomic) AlbumType albumType;
 @property (nonatomic) AnswerState answerState;
+@property (weak, nonatomic) SoundManager * soundManager;
+@property (weak, nonatomic) Question * question;
+@property (strong, nonatomic) GameEngine * gameEngine;
+@property(nonatomic) GameMode gameMode;
 
 - (void)initCardsWithAlbum:(AlbumType)albumType;
 - (void)shakeView:(UIButton *)view;
 - (void)playFirework;
 - (void)stopFirework;
 - (Card *)cardWithId:(NSNumber *)cardId;
+- (void)initViewWithOptions:(NSArray *)options;
 
-- (void)showShadowWithButton:(UIButton *)button;
+- (void)handleGotQuestion:(Question *)question;
+- (void)handleRightAnswerForObject:(NSNumber *)objectId;
+- (void)handleWrongAnswerForObject:(NSNumber *)objectId;
+- (void)handleAnswerTimeout:(NSNumber *)objectId;
+- (void)handleQuestionTimerCountdown:(NSNumber *) secondsLeft;
 
 - (IBAction)back:(id)sender;
 

@@ -7,7 +7,7 @@
 //
 
 #import "BaseGameViewController.h"
-#import <QuartzCore/CoreAnimation.h>
+#import "Feature.h"
 
 @interface BaseGameViewController () {
     CAEmitterLayer * _fireworksEmitter;
@@ -17,13 +17,11 @@
 
 @implementation BaseGameViewController
 
-- (void)showShadowWithButton:(UIButton *)button {
-    button.layer.masksToBounds = NO;
-    button.layer.shouldRasterize = YES;
-    button.layer.shadowOffset = CGSizeMake(1.0, 2.0);
-    button.layer.shadowOpacity = 0.7;
-    button.layer.shadowColor =  [UIColor blackColor].CGColor;
-}
+@synthesize labelInfo = _labelInfo;
+@synthesize soundManager = _soundManager;
+@synthesize question = _question;
+@synthesize gameEngine = _gameEngine;
+@synthesize gameMode = _gameMode;
 
 -(void)wobbleEnded:(NSString *)animationId finished:(NSNumber *)finished context:(void *)context{
     if([finished boolValue]){
@@ -146,11 +144,71 @@
     return card;
 }
 
+- (void)setBackgroundColorWithLabel:(UILabel *)label {
+    [label setBackgroundColor:[[Feature defaultFeature] pinkColor]];
+}
+
+#pragma 类成员函数
+- (void)handleGotQuestion:(Question *)question {
+    
+}
+
+- (void)handleRightAnswerForObject:(NSNumber *)objectId {
+    
+}
+
+- (void)handleWrongAnswerForObject:(NSNumber *)objectId {
+    
+}
+
+- (void)handleAnswerTimeout:(NSNumber *)objectId {
+    
+}
+
+- (void)handleQuestionTimerCountdown:(NSNumber *) secondsLeft {
+    
+}
+
+- (void)initViewWithOptions:(NSArray *)options{
+    if (nil != options) {
+        UIImage * image;
+        NSURL * url;
+        NSData * data;
+        NSNumber * cardId;
+        Card * card;
+        UIButton * button;
+        UILabel * label;
+        
+        NSInteger count = options.count;
+        for (NSInteger index = 0; index < count; index++) {
+            cardId = [options objectAtIndex:index];
+            card = [self cardWithId:cardId];
+            
+            button = (UIButton *)[self.view viewWithTag:index + 1];
+            if (nil != card.image) {
+                url = [[NSURL alloc] initWithString:card.image];
+                data = [NSData dataWithContentsOfURL:url];
+                image = [UIImage imageWithData:data];
+                [button setBackgroundImage:image forState:UIControlStateNormal];
+                [button setTitle:@"" forState:UIControlStateNormal];
+            }else {
+                [button setTitle:@"未设置照片，请设置" forState:UIControlStateNormal];
+            }
+            [[Feature defaultFeature ]showShadowWithButton:button];
+            label = (UILabel *)[self.view viewWithTag:-1 - index];
+            label.text = card.name;
+        }
+    }
+}
+
+#pragma 事件函数
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        _gameEngine = [[GameEngine alloc] init];
+        _gameEngine.delegate = self;
+        _gameEngine.answerQuestionTimerInterval = 10;
     }
     return self;
 }
@@ -158,8 +216,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    _gameEngine.gameMode = self.gameMode;
     [self initCardsWithAlbum:_albumType];
+    _soundManager = [SoundManager defaultManager];
+    [self setBackgroundColorWithLabel:_labelInfo];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -173,7 +233,34 @@
 }
 
 - (IBAction)back:(id)sender {
-    
+    _gameEngine.delegate = nil;
+    [_gameEngine stopGame];
+    [self.soundManager stopSound];
+    [_soundManager stopBackgroundSound];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma GameEngineDelegate
+- (void)gotQuestion:(Question *)question {
+    self.question = question;
+    [self handleGotQuestion:question];
+}
+
+- (void)rightAnswerForObject:(NSNumber *)objectId {
+    [self handleRightAnswerForObject:objectId];
+}
+
+- (void)wrongAnswerForObject:(NSNumber *)objectId {
+    [self handleWrongAnswerForObject:objectId];
+}
+
+- (void)answerTimeout:(NSNumber *)objectId {
+    [self handleAnswerTimeout:objectId];
+}
+
+- (void)questionTimerCountdown:(NSNumber *) secondsLeft {
+    [self handleQuestionTimerCountdown:secondsLeft];
 }
 
 @end

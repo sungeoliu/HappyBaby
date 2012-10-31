@@ -1,18 +1,18 @@
 //
-//  CardManagerViewController.m
+//  StudyModeGameViewController.m
 //  HappyBaby
 //
-//  Created by lixiaoyu on 12-10-29.
+//  Created by lixiaoyu on 12-10-27.
 //  Copyright (c) 2012年 Liu&Mao. All rights reserved.
 //
 
-#import "CardManagerViewController.h"
+#import "StudyModeGameViewController.h"
 
-@interface CardManagerViewController ()
+@interface StudyModeGameViewController ()
 
 @end
 
-@implementation CardManagerViewController
+@implementation StudyModeGameViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

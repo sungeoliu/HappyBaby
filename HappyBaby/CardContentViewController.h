@@ -1,5 +1,5 @@
 //
-//  CardManagerViewController.h
+//  CardContentViewController.h
 //  HappyBaby
 //
 //  Created by lixiaoyu on 12-10-29.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CardManagerViewController : UIViewController
+@interface CardContentViewController : UIViewController
 
 @end
