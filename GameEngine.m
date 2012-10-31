@@ -10,7 +10,7 @@
 #import "CardManager.h"
 
 @interface GameEngine(){
-    NSArray * _cards;
+    NSMutableArray * _cards;
     uint8_t * _questionSequenceTable;
     NSInteger _questionIndex;
     NSTimer * _questionTimer;
@@ -63,13 +63,32 @@
     return sequence;
 }
 
-- (void)startGameWithAlbum:(AlbumType)albumType{
-    _cards = [[CardManager defaultManager] allCardsInAlbum:albumType];
+- (BOOL)startGameWithAlbum:(AlbumType)albumType{
     _questionIndex = -1;
+    
+    NSArray * allCards = [[CardManager defaultManager] allCardsInAlbum:albumType];
+    if (allCards == nil || allCards.count == 0) {
+        return NO;
+    }
+    
+
+    _cards = [[NSMutableArray alloc] init];
+    for (Card * card in allCards) {
+//        if (card.image != nil && card.pronunciation != nil) {
+            [_cards addObject:card];
+//        }
+    }
+    
+    if (_cards.count == 0) {
+        return NO;
+    }
+    
+    return YES;
 }
 
 - (void)stopGame{
     free(_questionSequenceTable);
+    [self stopTimer];
 }
 
 - (void)startTimerForCard:(Card *)card{
@@ -113,7 +132,7 @@
 }
 
 - (Card *)currentQuestionCard{
-    if (_questionIndex >= 0) {
+    if (_questionIndex >= 0 && _questionIndex < _cards.count) {
         u_int8_t questionIndex = _questionSequenceTable[_questionIndex];
         return [_cards objectAtIndex:questionIndex];;
     }else{
@@ -124,6 +143,10 @@
 // 要求：
 // 1,选项卡片要随机生成。2,答案在选项数组
 - (NSArray *)optionsForCurrentQuestion{
+    if (_questionIndex == -1) {
+        return nil;
+    }
+    
     if (self.gameMode == GameModeUndefined) {
         self.gameMode = GameModeTwoOptions;
     }
@@ -170,7 +193,11 @@
     return optionsArray;
 }
 
-- (void)nextQuestion{
+- (BOOL)nextQuestion{
+    if (_cards == nil || _cards.count <= 0) {
+        return NO;
+    }
+    
     if (_questionIndex == -1 ||
         _questionIndex + 1 == _cards.count) {
         if (_questionSequenceTable != NULL) {
@@ -183,12 +210,18 @@
     }else{
         _questionIndex ++;
     }
+    
+    return YES;
 }
 
-- (void)newQuestion{
+- (BOOL)newQuestion{
     [self nextQuestion];
     
     Card * card = [self currentQuestionCard];
+    if (nil == card) {
+        return NO;
+    }
+    
     NSLog(@"new question for %@ with id %d", card.name, [card.id integerValue]);
     
     NSArray * options = [self optionsForCurrentQuestion];
@@ -201,6 +234,8 @@
     }
     
     [self startTimerForCard:card];
+    
+    return YES;
 }
 
 - (void)checkAnswer:(NSNumber *)objectId{

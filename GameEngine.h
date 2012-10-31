@@ -37,9 +37,9 @@ typedef enum{
 @property (nonatomic, strong) id<GameEngineDelegate> delegate;
 @property (nonatomic, strong) Question * currentQuestion;
 
-- (void)startGameWithAlbum:(AlbumType)albumType;
+- (BOOL)startGameWithAlbum:(AlbumType)albumType;
 - (void)stopGame;
-- (void)newQuestion;
+- (BOOL)newQuestion;
 - (void)checkAnswer:(NSNumber *)objectId;
 
 @end
