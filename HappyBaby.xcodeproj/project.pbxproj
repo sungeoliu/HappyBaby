@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C0CE260162BF6D100E86063 /* CardAudioRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0CE25E162BF6D000E86063 /* CardAudioRecordViewController.m */; };
 		3C0CE261162BF6D100E86063 /* CardAudioRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE25F162BF6D100E86063 /* CardAudioRecordViewController.xib */; };
 		3C0CE26E162D33E900E86063 /* wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE26B162D33E900E86063 /* wrong.mp3 */; };
 		3C0CE26F162D33E900E86063 /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE26C162D33E900E86063 /* right.mp3 */; };
 		3C0CE270162D33E900E86063 /* ready.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C0CE26D162D33E900E86063 /* ready.mp3 */; };
 		3C0CE2A3162EA6B100E86063 /* UIExtendNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0CE2A2162EA6B100E86063 /* UIExtendNavigationController.m */; };
 		3C475A691628F5D40027A4FD /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C475A681628F5D40027A4FD /* backgroundMusic.mp3 */; };
-		3C475A6D1628FB540027A4FD /* CardManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C475A6B1628FB540027A4FD /* CardManagerViewController.m */; };
-		3C475A6E1628FB540027A4FD /* CardManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C475A6C1628FB540027A4FD /* CardManagerViewController.xib */; };
+		3C475A6D1628FB540027A4FD /* CardSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C475A6B1628FB540027A4FD /* CardSetViewController.m */; };
+		3C475A6E1628FB540027A4FD /* CardSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C475A6C1628FB540027A4FD /* CardSetViewController.xib */; };
+		3C944C6D163E56710031B26A /* addphoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C944C6B163E56710031B26A /* addphoto.png */; };
+		3C944C6E163E56710031B26A /* addphoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C944C6C163E56710031B26A /* addphoto@2x.png */; };
+		3C944C72163E5FB20031B26A /* CardManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C944C70163E5FB20031B26A /* CardManagerViewController.m */; };
+		3C944C73163E5FB20031B26A /* CardManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C944C71163E5FB20031B26A /* CardManagerViewController.xib */; };
+		3C944C7F163E778E0031B26A /* CardContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C944C7D163E778E0031B26A /* CardContentViewController.m */; };
 		3CB8C8B1163A2627005A4C29 /* backNavigationBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8C8AF163A2627005A4C29 /* backNavigationBar.png */; };
 		3CB8C8B2163A2627005A4C29 /* backNavigationBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8C8B0163A2627005A4C29 /* backNavigationBar@2x.png */; };
 		3CB8C8B5163A2E8F005A4C29 /* Feature.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8C8B4163A2E8F005A4C29 /* Feature.m */; };
@@ -29,6 +33,11 @@
 		3CB8C901163A6F0E005A4C29 /* eye@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8C8FD163A6F0E005A4C29 /* eye@2x.png */; };
 		3CB8C902163A6F0E005A4C29 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8C8FE163A6F0E005A4C29 /* search.png */; };
 		3CB8C903163A6F0E005A4C29 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8C8FF163A6F0E005A4C29 /* search@2x.png */; };
+		3CB8C906163B6FF9005A4C29 /* StudyModeGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8C905163B6FF9005A4C29 /* StudyModeGameViewController.m */; };
+		3CB8C909163D6CBE005A4C29 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8C907163D6CBE005A4C29 /* Icon.png */; };
+		3CB8C90A163D6CBE005A4C29 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8C908163D6CBE005A4C29 /* Icon@2x.png */; };
+		3CB8C90D163D6DD5005A4C29 /* CardPanelDotRect.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8C90B163D6DD5005A4C29 /* CardPanelDotRect.png */; };
+		3CB8C90E163D6DD5005A4C29 /* CardPanelDotRect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CB8C90C163D6DD5005A4C29 /* CardPanelDotRect@2x.png */; };
 		3CD0C235162FF1B60023D217 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD0C234162FF1B60023D217 /* QuartzCore.framework */; };
 		3CD0C238162FF24F0023D217 /* ring.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C236162FF24F0023D217 /* ring.png */; };
 		3CD0C239162FF24F0023D217 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CD0C237162FF24F0023D217 /* star.png */; };
@@ -110,8 +119,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C0CE25D162BF6D000E86063 /* CardAudioRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAudioRecordViewController.h; sourceTree = "<group>"; };
-		3C0CE25E162BF6D000E86063 /* CardAudioRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAudioRecordViewController.m; sourceTree = "<group>"; };
 		3C0CE25F162BF6D100E86063 /* CardAudioRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardAudioRecordViewController.xib; path = HappyBaby/CardAudioRecordViewController.xib; sourceTree = "<group>"; };
 		3C0CE26B162D33E900E86063 /* wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = wrong.mp3; path = Resouse/sound/wrong.mp3; sourceTree = "<group>"; };
 		3C0CE26C162D33E900E86063 /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = right.mp3; path = Resouse/sound/right.mp3; sourceTree = "<group>"; };
@@ -119,9 +126,16 @@
 		3C0CE2A1162EA6B000E86063 /* UIExtendNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIExtendNavigationController.h; sourceTree = "<group>"; };
 		3C0CE2A2162EA6B100E86063 /* UIExtendNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIExtendNavigationController.m; sourceTree = "<group>"; };
 		3C475A681628F5D40027A4FD /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
-		3C475A6A1628FB540027A4FD /* CardManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardManagerViewController.h; sourceTree = "<group>"; };
-		3C475A6B1628FB540027A4FD /* CardManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardManagerViewController.m; sourceTree = "<group>"; };
-		3C475A6C1628FB540027A4FD /* CardManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardManagerViewController.xib; path = HappyBaby/CardManagerViewController.xib; sourceTree = "<group>"; };
+		3C475A6A1628FB540027A4FD /* CardSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardSetViewController.h; sourceTree = "<group>"; };
+		3C475A6B1628FB540027A4FD /* CardSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardSetViewController.m; sourceTree = "<group>"; };
+		3C475A6C1628FB540027A4FD /* CardSetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardSetViewController.xib; path = HappyBaby/CardSetViewController.xib; sourceTree = "<group>"; };
+		3C944C6B163E56710031B26A /* addphoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addphoto.png; path = Resouse/images/addphoto.png; sourceTree = "<group>"; };
+		3C944C6C163E56710031B26A /* addphoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "addphoto@2x.png"; path = "Resouse/images/addphoto@2x.png"; sourceTree = "<group>"; };
+		3C944C6F163E5FB10031B26A /* CardManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardManagerViewController.h; sourceTree = "<group>"; };
+		3C944C70163E5FB20031B26A /* CardManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardManagerViewController.m; sourceTree = "<group>"; };
+		3C944C71163E5FB20031B26A /* CardManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardManagerViewController.xib; path = HappyBaby/CardManagerViewController.xib; sourceTree = "<group>"; };
+		3C944C7C163E778E0031B26A /* CardContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardContentViewController.h; sourceTree = "<group>"; };
+		3C944C7D163E778E0031B26A /* CardContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardContentViewController.m; sourceTree = "<group>"; };
 		3CB8C8AF163A2627005A4C29 /* backNavigationBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = backNavigationBar.png; path = Resouse/images/backNavigationBar.png; sourceTree = "<group>"; };
 		3CB8C8B0163A2627005A4C29 /* backNavigationBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "backNavigationBar@2x.png"; path = "Resouse/images/backNavigationBar@2x.png"; sourceTree = "<group>"; };
 		3CB8C8B3163A2E8F005A4C29 /* Feature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feature.h; sourceTree = "<group>"; };
@@ -136,6 +150,12 @@
 		3CB8C8FD163A6F0E005A4C29 /* eye@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eye@2x.png"; sourceTree = "<group>"; };
 		3CB8C8FE163A6F0E005A4C29 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
 		3CB8C8FF163A6F0E005A4C29 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
+		3CB8C904163B6FF9005A4C29 /* StudyModeGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyModeGameViewController.h; sourceTree = "<group>"; };
+		3CB8C905163B6FF9005A4C29 /* StudyModeGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyModeGameViewController.m; sourceTree = "<group>"; };
+		3CB8C907163D6CBE005A4C29 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		3CB8C908163D6CBE005A4C29 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		3CB8C90B163D6DD5005A4C29 /* CardPanelDotRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CardPanelDotRect.png; path = Resouse/images/CardPanelDotRect.png; sourceTree = "<group>"; };
+		3CB8C90C163D6DD5005A4C29 /* CardPanelDotRect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CardPanelDotRect@2x.png"; path = "Resouse/images/CardPanelDotRect@2x.png"; sourceTree = "<group>"; };
 		3CD0C234162FF1B60023D217 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3CD0C236162FF24F0023D217 /* ring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ring.png; path = Resouse/images/ring.png; sourceTree = "<group>"; };
 		3CD0C237162FF24F0023D217 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Resouse/images/star.png; sourceTree = "<group>"; };
@@ -273,9 +293,10 @@
 		3CD7312A1627F3FF000432BD /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				3C944C71163E5FB20031B26A /* CardManagerViewController.xib */,
 				3CD0C24B163102180023D217 /* QuestionMode1GameViewController.xib */,
 				3C0CE25F162BF6D100E86063 /* CardAudioRecordViewController.xib */,
-				3C475A6C1628FB540027A4FD /* CardManagerViewController.xib */,
+				3C475A6C1628FB540027A4FD /* CardSetViewController.xib */,
 				3CD731471627F656000432BD /* HomeViewController.xib */,
 				3CD731361627F4D5000432BD /* QuestionModeGameViewController.xib */,
 				3CD0C23A162FF76B0023D217 /* QuestionMode2GameViewController.xib */,
@@ -294,14 +315,18 @@
 				3CD7312F1627F4B3000432BD /* HomeViewController.m */,
 				3CD731301627F4B3000432BD /* QuestionModeGameViewController.h */,
 				3CD731311627F4B3000432BD /* QuestionModeGameViewController.m */,
-				3C475A6A1628FB540027A4FD /* CardManagerViewController.h */,
-				3C475A6B1628FB540027A4FD /* CardManagerViewController.m */,
-				3C0CE25D162BF6D000E86063 /* CardAudioRecordViewController.h */,
-				3C0CE25E162BF6D000E86063 /* CardAudioRecordViewController.m */,
+				3C475A6A1628FB540027A4FD /* CardSetViewController.h */,
+				3C475A6B1628FB540027A4FD /* CardSetViewController.m */,
 				3C0CE2A1162EA6B000E86063 /* UIExtendNavigationController.h */,
 				3C0CE2A2162EA6B100E86063 /* UIExtendNavigationController.m */,
 				3CB8C8B3163A2E8F005A4C29 /* Feature.h */,
 				3CB8C8B4163A2E8F005A4C29 /* Feature.m */,
+				3CB8C904163B6FF9005A4C29 /* StudyModeGameViewController.h */,
+				3CB8C905163B6FF9005A4C29 /* StudyModeGameViewController.m */,
+				3C944C6F163E5FB10031B26A /* CardManagerViewController.h */,
+				3C944C70163E5FB20031B26A /* CardManagerViewController.m */,
+				3C944C7C163E778E0031B26A /* CardContentViewController.h */,
+				3C944C7D163E778E0031B26A /* CardContentViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -309,6 +334,12 @@
 		3CD731421627F5EB000432BD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				3C944C6B163E56710031B26A /* addphoto.png */,
+				3C944C6C163E56710031B26A /* addphoto@2x.png */,
+				3CB8C90B163D6DD5005A4C29 /* CardPanelDotRect.png */,
+				3CB8C90C163D6DD5005A4C29 /* CardPanelDotRect@2x.png */,
+				3CB8C907163D6CBE005A4C29 /* Icon.png */,
+				3CB8C908163D6CBE005A4C29 /* Icon@2x.png */,
 				3CB8C8FC163A6F0E005A4C29 /* eye.png */,
 				3CB8C8FD163A6F0E005A4C29 /* eye@2x.png */,
 				3CB8C8FE163A6F0E005A4C29 /* search.png */,
@@ -557,7 +588,7 @@
 				3CD731461627F5FD000432BD /* mother.png in Resources */,
 				3CD731481627F656000432BD /* HomeViewController.xib in Resources */,
 				3C475A691628F5D40027A4FD /* backgroundMusic.mp3 in Resources */,
-				3C475A6E1628FB540027A4FD /* CardManagerViewController.xib in Resources */,
+				3C475A6E1628FB540027A4FD /* CardSetViewController.xib in Resources */,
 				3C0CE261162BF6D100E86063 /* CardAudioRecordViewController.xib in Resources */,
 				3C0CE26E162D33E900E86063 /* wrong.mp3 in Resources */,
 				3C0CE26F162D33E900E86063 /* right.mp3 in Resources */,
@@ -591,6 +622,13 @@
 				3CB8C901163A6F0E005A4C29 /* eye@2x.png in Resources */,
 				3CB8C902163A6F0E005A4C29 /* search.png in Resources */,
 				3CB8C903163A6F0E005A4C29 /* search@2x.png in Resources */,
+				3CB8C909163D6CBE005A4C29 /* Icon.png in Resources */,
+				3CB8C90A163D6CBE005A4C29 /* Icon@2x.png in Resources */,
+				3CB8C90D163D6DD5005A4C29 /* CardPanelDotRect.png in Resources */,
+				3CB8C90E163D6DD5005A4C29 /* CardPanelDotRect@2x.png in Resources */,
+				3C944C6D163E56710031B26A /* addphoto.png in Resources */,
+				3C944C6E163E56710031B26A /* addphoto@2x.png in Resources */,
+				3C944C73163E5FB20031B26A /* CardManagerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,13 +674,15 @@
 				3CD731321627F4B3000432BD /* BaseGameViewController.m in Sources */,
 				3CD731331627F4B3000432BD /* HomeViewController.m in Sources */,
 				3CD731341627F4B3000432BD /* QuestionModeGameViewController.m in Sources */,
-				3C475A6D1628FB540027A4FD /* CardManagerViewController.m in Sources */,
-				3C0CE260162BF6D100E86063 /* CardAudioRecordViewController.m in Sources */,
+				3C475A6D1628FB540027A4FD /* CardSetViewController.m in Sources */,
 				3C0CE2A3162EA6B100E86063 /* UIExtendNavigationController.m in Sources */,
 				E695E8A7162FB54900286730 /* Question.m in Sources */,
 				E695E8AA1631087400286730 /* InternalAlbums.m in Sources */,
 				E695E8AD1631089700286730 /* Album.m in Sources */,
 				3CB8C8B5163A2E8F005A4C29 /* Feature.m in Sources */,
+				3CB8C906163B6FF9005A4C29 /* StudyModeGameViewController.m in Sources */,
+				3C944C72163E5FB20031B26A /* CardManagerViewController.m in Sources */,
+				3C944C7F163E778E0031B26A /* CardContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
