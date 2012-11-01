@@ -35,6 +35,14 @@
 		E695E8AA1631087400286730 /* InternalAlbums.m in Sources */ = {isa = PBXBuildFile; fileRef = E695E8A91631087400286730 /* InternalAlbums.m */; };
 		E695E8AD1631089700286730 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = E695E8AC1631089700286730 /* Album.m */; };
 		E695E8B016312A6700286730 /* Album.strings in Resources */ = {isa = PBXBuildFile; fileRef = E695E8B216312A6700286730 /* Album.strings */; };
+		E6B4750916412D6900BD5078 /* try_again.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E6B4750116412D6900BD5078 /* try_again.m4a */; };
+		E6B4750A16412D6900BD5078 /* where_is_baba.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E6B4750216412D6900BD5078 /* where_is_baba.m4a */; };
+		E6B4750B16412D6900BD5078 /* where_is_laolao.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E6B4750316412D6900BD5078 /* where_is_laolao.m4a */; };
+		E6B4750C16412D6900BD5078 /* where_is_laoye.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E6B4750416412D6900BD5078 /* where_is_laoye.m4a */; };
+		E6B4750D16412D6900BD5078 /* where_is_mama.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E6B4750516412D6900BD5078 /* where_is_mama.m4a */; };
+		E6B4750E16412D6900BD5078 /* where_is_nainai.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E6B4750616412D6900BD5078 /* where_is_nainai.m4a */; };
+		E6B4750F16412D6900BD5078 /* where_is_yeye.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E6B4750716412D6900BD5078 /* where_is_yeye.m4a */; };
+		E6B4751016412D6900BD5078 /* you_got_it.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E6B4750816412D6900BD5078 /* you_got_it.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +114,14 @@
 		E695E8B516312CA700286730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E695E8B616312CA700286730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Album.strings"; sourceTree = "<group>"; };
 		E695E8B716312CA700286730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E6B4750116412D6900BD5078 /* try_again.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = try_again.m4a; sourceTree = "<group>"; };
+		E6B4750216412D6900BD5078 /* where_is_baba.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = where_is_baba.m4a; sourceTree = "<group>"; };
+		E6B4750316412D6900BD5078 /* where_is_laolao.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = where_is_laolao.m4a; sourceTree = "<group>"; };
+		E6B4750416412D6900BD5078 /* where_is_laoye.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = where_is_laoye.m4a; sourceTree = "<group>"; };
+		E6B4750516412D6900BD5078 /* where_is_mama.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = where_is_mama.m4a; sourceTree = "<group>"; };
+		E6B4750616412D6900BD5078 /* where_is_nainai.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = where_is_nainai.m4a; sourceTree = "<group>"; };
+		E6B4750716412D6900BD5078 /* where_is_yeye.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = where_is_yeye.m4a; sourceTree = "<group>"; };
+		E6B4750816412D6900BD5078 /* you_got_it.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = you_got_it.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +191,7 @@
 		E687F86416252D0100BA0AF0 /* HappyBaby */ = {
 			isa = PBXGroup;
 			children = (
+				E6B4751116412D6F00BD5078 /* sound */,
 				E687F86D16252D0100BA0AF0 /* AppDelegate.h */,
 				E687F86E16252D0100BA0AF0 /* AppDelegate.m */,
 				E687F86516252D0100BA0AF0 /* Supporting Files */,
@@ -250,6 +267,21 @@
 				E695E8A6162FB54900286730 /* Question.m */,
 			);
 			name = GameControl;
+			sourceTree = "<group>";
+		};
+		E6B4751116412D6F00BD5078 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				E6B4750116412D6900BD5078 /* try_again.m4a */,
+				E6B4750216412D6900BD5078 /* where_is_baba.m4a */,
+				E6B4750316412D6900BD5078 /* where_is_laolao.m4a */,
+				E6B4750416412D6900BD5078 /* where_is_laoye.m4a */,
+				E6B4750516412D6900BD5078 /* where_is_mama.m4a */,
+				E6B4750616412D6900BD5078 /* where_is_nainai.m4a */,
+				E6B4750716412D6900BD5078 /* where_is_yeye.m4a */,
+				E6B4750816412D6900BD5078 /* you_got_it.m4a */,
+			);
+			name = sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +379,14 @@
 				E687F87316252D0100BA0AF0 /* Default@2x.png in Resources */,
 				E687F87516252D0100BA0AF0 /* Default-568h@2x.png in Resources */,
 				E695E8B016312A6700286730 /* Album.strings in Resources */,
+				E6B4750916412D6900BD5078 /* try_again.m4a in Resources */,
+				E6B4750A16412D6900BD5078 /* where_is_baba.m4a in Resources */,
+				E6B4750B16412D6900BD5078 /* where_is_laolao.m4a in Resources */,
+				E6B4750C16412D6900BD5078 /* where_is_laoye.m4a in Resources */,
+				E6B4750D16412D6900BD5078 /* where_is_mama.m4a in Resources */,
+				E6B4750E16412D6900BD5078 /* where_is_nainai.m4a in Resources */,
+				E6B4750F16412D6900BD5078 /* where_is_yeye.m4a in Resources */,
+				E6B4751016412D6900BD5078 /* you_got_it.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
