@@ -7,19 +7,36 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeViewController.h"
+#import "CardManager.h"
 
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize navController = _navController;
+@synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+    
+    HomeViewController * homeViewController = [[HomeViewController alloc] initWithNibName:@"HomeViewController" bundle:nil];
+    _navController = [[UIExtendNavigationController alloc] initWithRootViewController:homeViewController];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = _navController;
     [self.window makeKeyAndVisible];
+    
+    //测试数据
+    [[CardManager defaultManager] newCardWithName:@"姥爷" inAlbum:AlbumTypeFamily];
+    [[CardManager defaultManager] newCardWithName:@"姥姥" inAlbum:AlbumTypeFamily];
+    [[CardManager defaultManager] newCardWithName:@"爸爸" inAlbum:AlbumTypeFamily];
+    [[CardManager defaultManager] newCardWithName:@"妈妈" inAlbum:AlbumTypeFamily];
+    [[CardManager defaultManager] newCardWithName:@"爷爷" inAlbum:AlbumTypeFamily];
+    [[CardManager defaultManager] newCardWithName:@"奶奶" inAlbum:AlbumTypeFamily];
+    
     return YES;
 }
 
