@@ -27,7 +27,7 @@
 - (NSArray *)allCardsInAlbum:(AlbumType) albumType;
 - (Card *)cardWithName:(NSString *)name inAlbum:(AlbumType)album;
 
-- (BOOL)newCardWithName:(NSString *)name inAlbum:(AlbumType)albumType;
+- (Card *)newCardWithName:(NSString *)name inAlbum:(AlbumType)albumType;
 - (BOOL)modifyCard:(Card *)card withImage:(UIImage *) image;
 - (BOOL)modifyCard:(Card *)card withPronunciation:(NSURL *)url;
 

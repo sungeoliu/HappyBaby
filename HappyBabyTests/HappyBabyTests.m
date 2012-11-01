@@ -80,51 +80,53 @@
             Card * card = [cards objectAtIndex:j];
             NSLog(@"    card id   %d", [card.id integerValue]);
             NSLog(@"    card name %@", card.name);
+            NSLog(@"    card image %@", card.image);
+            NSLog(@"    card sound %@", card.pronunciation);
         }
     }
 }
 
-- (void)testGameEngine{
-//    NSArray * family = [NSArray arrayWithObjects:@"laolao", @"laoye", @"nainai", @"yeye", @"mama", @"baba", nil];
+//- (void)testGameEngine{
+////    NSArray * family = [NSArray arrayWithObjects:@"laolao", @"laoye", @"nainai", @"yeye", @"mama", @"baba", nil];
+////    
+////    for (int i = 0; i < family.count; i++) {
+////        BOOL ret = [cardManager newCardWithName:[family objectAtIndex:i] inAlbum:AlbumTypeFamily];
+////        STAssertTrue(ret, nil);
+////    }
 //    
-//    for (int i = 0; i < family.count; i++) {
-//        BOOL ret = [cardManager newCardWithName:[family objectAtIndex:i] inAlbum:AlbumTypeFamily];
-//        STAssertTrue(ret, nil);
+//    GameEngine * engine = [[GameEngine alloc] init];
+//    [engine startGameWithAlbum:AlbumTypeFamily];
+//    
+//    NSInteger loop = 4;
+//    
+//    NSLog(@"\n一选一");
+//    for (int i = 0; i < loop; i++) {
+//        engine.gameMode = GameModeOneOption;
+//        [engine newQuestion];
+//        [engine.currentQuestion debugPrint];
 //    }
-    
-    GameEngine * engine = [[GameEngine alloc] init];
-    [engine startGameWithAlbum:AlbumTypeFamily];
-    
-    NSInteger loop = 4;
-    
-    NSLog(@"\n一选一");
-    for (int i = 0; i < loop; i++) {
-        engine.gameMode = GameModeOneOption;
-        [engine newQuestion];
-        [engine.currentQuestion debugPrint];
-    }
-
-    
-    NSLog(@"\n二选一");
-    for (int i = 0; i < loop; i++) {
-        engine.gameMode = GameModeTwoOptions;
-        [engine newQuestion];
-        [engine.currentQuestion debugPrint];
-    }
-
-    NSLog(@"\n三选一");
-    for (int i = 0; i < loop; i++) {
-        engine.gameMode = GameModeThreeOptions;
-        [engine newQuestion];
-        [engine.currentQuestion debugPrint];
-    }
-    
-    NSLog(@"\n四选一");
-    for (int i = 0; i < loop; i++) {
-        engine.gameMode = GameModeFourOptions;
-        [engine newQuestion];
-        [engine.currentQuestion debugPrint];        
-    }
-}
+//
+//    
+//    NSLog(@"\n二选一");
+//    for (int i = 0; i < loop; i++) {
+//        engine.gameMode = GameModeTwoOptions;
+//        [engine newQuestion];
+//        [engine.currentQuestion debugPrint];
+//    }
+//
+//    NSLog(@"\n三选一");
+//    for (int i = 0; i < loop; i++) {
+//        engine.gameMode = GameModeThreeOptions;
+//        [engine newQuestion];
+//        [engine.currentQuestion debugPrint];
+//    }
+//    
+//    NSLog(@"\n四选一");
+//    for (int i = 0; i < loop; i++) {
+//        engine.gameMode = GameModeFourOptions;
+//        [engine newQuestion];
+//        [engine.currentQuestion debugPrint];        
+//    }
+//}
 
 @end

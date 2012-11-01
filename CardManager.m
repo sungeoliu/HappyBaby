@@ -67,10 +67,10 @@ static CardManager * sDefaultManager = nil;
     }
 }
 
-- (BOOL)newCardWithName:(NSString *)name inAlbum:(AlbumType)albumType{
+- (Card *)newCardWithName:(NSString *)name inAlbum:(AlbumType)albumType{
     // check if this card name already exists.
     if (0 != [self cardWithName:name inAlbum:albumType]) {
-        return NO;
+        return nil;
     }
     
     Card * card = (Card *)[NSEntityDescription insertNewObjectForEntityForName:kCardEntity inManagedObjectContext:self.managedObjectContext];
@@ -79,10 +79,10 @@ static CardManager * sDefaultManager = nil;
     card.albumId = [NSNumber numberWithInteger:albumType];
     
     if (! [self synchroniseToStore]) {
-        return NO;
+        return nil;
     }
     
-    return YES;
+    return card;
 }
 
 - (BOOL)modifyCard:(Card *)card withImage:(UIImage *)image{

@@ -29,14 +29,6 @@
     self.window.rootViewController = _navController;
     [self.window makeKeyAndVisible];
     
-    //测试数据
-    [[CardManager defaultManager] newCardWithName:@"姥爷" inAlbum:AlbumTypeFamily];
-    [[CardManager defaultManager] newCardWithName:@"姥姥" inAlbum:AlbumTypeFamily];
-    [[CardManager defaultManager] newCardWithName:@"爸爸" inAlbum:AlbumTypeFamily];
-    [[CardManager defaultManager] newCardWithName:@"妈妈" inAlbum:AlbumTypeFamily];
-    [[CardManager defaultManager] newCardWithName:@"爷爷" inAlbum:AlbumTypeFamily];
-    [[CardManager defaultManager] newCardWithName:@"奶奶" inAlbum:AlbumTypeFamily];
-    
     return YES;
 }
 

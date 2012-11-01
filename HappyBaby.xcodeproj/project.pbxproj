@@ -93,6 +93,12 @@
 		E6B4750E16412D6900BD5078 /* where_is_nainai.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E6B4750616412D6900BD5078 /* where_is_nainai.m4a */; };
 		E6B4750F16412D6900BD5078 /* where_is_yeye.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E6B4750716412D6900BD5078 /* where_is_yeye.m4a */; };
 		E6B4751016412D6900BD5078 /* you_got_it.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E6B4750816412D6900BD5078 /* you_got_it.m4a */; };
+		E6B47521164270C900BD5078 /* baba@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4751B164270C900BD5078 /* baba@2x.png */; };
+		E6B47522164270C900BD5078 /* laolao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4751C164270C900BD5078 /* laolao@2x.png */; };
+		E6B47523164270C900BD5078 /* laoye@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4751D164270C900BD5078 /* laoye@2x.png */; };
+		E6B47524164270C900BD5078 /* mama@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4751E164270C900BD5078 /* mama@2x.png */; };
+		E6B47525164270C900BD5078 /* nainai@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B4751F164270C900BD5078 /* nainai@2x.png */; };
+		E6B47526164270C900BD5078 /* yeye@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B47520164270C900BD5078 /* yeye@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,14 +222,20 @@
 		E695E8B516312CA700286730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E695E8B616312CA700286730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Album.strings"; sourceTree = "<group>"; };
 		E695E8B716312CA700286730 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		E6B4750116412D6900BD5078 /* try_again.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = try_again.m4a; sourceTree = "<group>"; };
-		E6B4750216412D6900BD5078 /* where_is_baba.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = where_is_baba.m4a; sourceTree = "<group>"; };
-		E6B4750316412D6900BD5078 /* where_is_laolao.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = where_is_laolao.m4a; sourceTree = "<group>"; };
-		E6B4750416412D6900BD5078 /* where_is_laoye.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = where_is_laoye.m4a; sourceTree = "<group>"; };
-		E6B4750516412D6900BD5078 /* where_is_mama.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = where_is_mama.m4a; sourceTree = "<group>"; };
-		E6B4750616412D6900BD5078 /* where_is_nainai.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = where_is_nainai.m4a; sourceTree = "<group>"; };
-		E6B4750716412D6900BD5078 /* where_is_yeye.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = where_is_yeye.m4a; sourceTree = "<group>"; };
-		E6B4750816412D6900BD5078 /* you_got_it.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = you_got_it.m4a; sourceTree = "<group>"; };
+		E6B4750116412D6900BD5078 /* try_again.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = try_again.m4a; path = HappyBaby/try_again.m4a; sourceTree = "<group>"; };
+		E6B4750216412D6900BD5078 /* where_is_baba.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = where_is_baba.m4a; path = HappyBaby/where_is_baba.m4a; sourceTree = "<group>"; };
+		E6B4750316412D6900BD5078 /* where_is_laolao.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = where_is_laolao.m4a; path = HappyBaby/where_is_laolao.m4a; sourceTree = "<group>"; };
+		E6B4750416412D6900BD5078 /* where_is_laoye.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = where_is_laoye.m4a; path = HappyBaby/where_is_laoye.m4a; sourceTree = "<group>"; };
+		E6B4750516412D6900BD5078 /* where_is_mama.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = where_is_mama.m4a; path = HappyBaby/where_is_mama.m4a; sourceTree = "<group>"; };
+		E6B4750616412D6900BD5078 /* where_is_nainai.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = where_is_nainai.m4a; path = HappyBaby/where_is_nainai.m4a; sourceTree = "<group>"; };
+		E6B4750716412D6900BD5078 /* where_is_yeye.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = where_is_yeye.m4a; path = HappyBaby/where_is_yeye.m4a; sourceTree = "<group>"; };
+		E6B4750816412D6900BD5078 /* you_got_it.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = you_got_it.m4a; path = HappyBaby/you_got_it.m4a; sourceTree = "<group>"; };
+		E6B4751B164270C900BD5078 /* baba@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baba@2x.png"; sourceTree = "<group>"; };
+		E6B4751C164270C900BD5078 /* laolao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laolao@2x.png"; sourceTree = "<group>"; };
+		E6B4751D164270C900BD5078 /* laoye@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laoye@2x.png"; sourceTree = "<group>"; };
+		E6B4751E164270C900BD5078 /* mama@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mama@2x.png"; sourceTree = "<group>"; };
+		E6B4751F164270C900BD5078 /* nainai@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nainai@2x.png"; sourceTree = "<group>"; };
+		E6B47520164270C900BD5078 /* yeye@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yeye@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +272,14 @@
 		3C475A671628F5C30027A4FD /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				E6B4750116412D6900BD5078 /* try_again.m4a */,
+				E6B4750216412D6900BD5078 /* where_is_baba.m4a */,
+				E6B4750316412D6900BD5078 /* where_is_laolao.m4a */,
+				E6B4750416412D6900BD5078 /* where_is_laoye.m4a */,
+				E6B4750516412D6900BD5078 /* where_is_mama.m4a */,
+				E6B4750616412D6900BD5078 /* where_is_nainai.m4a */,
+				E6B4750716412D6900BD5078 /* where_is_yeye.m4a */,
+				E6B4750816412D6900BD5078 /* you_got_it.m4a */,
 				3C0CE26B162D33E900E86063 /* wrong.mp3 */,
 				3C0CE26C162D33E900E86063 /* right.mp3 */,
 				3C0CE26D162D33E900E86063 /* ready.mp3 */,
@@ -328,6 +348,12 @@
 		3CD731421627F5EB000432BD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E6B4751B164270C900BD5078 /* baba@2x.png */,
+				E6B4751C164270C900BD5078 /* laolao@2x.png */,
+				E6B4751D164270C900BD5078 /* laoye@2x.png */,
+				E6B4751E164270C900BD5078 /* mama@2x.png */,
+				E6B4751F164270C900BD5078 /* nainai@2x.png */,
+				E6B47520164270C900BD5078 /* yeye@2x.png */,
 				3CB8C907163D6CBE005A4C29 /* Icon.png */,
 				3CB8C908163D6CBE005A4C29 /* Icon@2x.png */,
 				3CB8C8FC163A6F0E005A4C29 /* eye.png */,
@@ -401,7 +427,6 @@
 		E687F86416252D0100BA0AF0 /* HappyBaby */ = {
 			isa = PBXGroup;
 			children = (
-				E6B4751116412D6F00BD5078 /* sound */,
 				3CD7312B1627F429000432BD /* Classes */,
 				3CD731291627F3F5000432BD /* Resource */,
 				E687F86D16252D0100BA0AF0 /* AppDelegate.h */,
@@ -479,21 +504,6 @@
 				E695E8A6162FB54900286730 /* Question.m */,
 			);
 			name = GameControl;
-			sourceTree = "<group>";
-		};
-		E6B4751116412D6F00BD5078 /* sound */ = {
-			isa = PBXGroup;
-			children = (
-				E6B4750116412D6900BD5078 /* try_again.m4a */,
-				E6B4750216412D6900BD5078 /* where_is_baba.m4a */,
-				E6B4750316412D6900BD5078 /* where_is_laolao.m4a */,
-				E6B4750416412D6900BD5078 /* where_is_laoye.m4a */,
-				E6B4750516412D6900BD5078 /* where_is_mama.m4a */,
-				E6B4750616412D6900BD5078 /* where_is_nainai.m4a */,
-				E6B4750716412D6900BD5078 /* where_is_yeye.m4a */,
-				E6B4750816412D6900BD5078 /* you_got_it.m4a */,
-			);
-			name = sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -637,6 +647,12 @@
 				3CB8C909163D6CBE005A4C29 /* Icon.png in Resources */,
 				3CB8C90A163D6CBE005A4C29 /* Icon@2x.png in Resources */,
 				3C944C73163E5FB20031B26A /* CardManagerViewController.xib in Resources */,
+				E6B47521164270C900BD5078 /* baba@2x.png in Resources */,
+				E6B47522164270C900BD5078 /* laolao@2x.png in Resources */,
+				E6B47523164270C900BD5078 /* laoye@2x.png in Resources */,
+				E6B47524164270C900BD5078 /* mama@2x.png in Resources */,
+				E6B47525164270C900BD5078 /* nainai@2x.png in Resources */,
+				E6B47526164270C900BD5078 /* yeye@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

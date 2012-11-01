@@ -23,17 +23,47 @@
 @implementation InternalAlbums
 @synthesize albums = _albums;
 
+- (BOOL)addCard:(NSString *)name withImage:(NSString *)imagePath withSound:(NSString *)soundPath{
+    CardManager * manager = [CardManager defaultManager];
+    Card * card = [manager newCardWithName:name inAlbum:AlbumTypeFamily];
+    if (nil == card) {
+        return NO;
+    }
+    
+    if (nil != imagePath) {
+        UIImage * image = [UIImage imageNamed:imagePath];
+        if(! [manager modifyCard:card withImage:image]){
+            return NO;
+        }
+    }
+    
+    if (nil != soundPath) {
+        NSURL * soundURL = [[NSBundle mainBundle] URLForResource:soundPath withExtension:@"m4a"];
+        if (! [manager modifyCard:card withPronunciation:soundURL]) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
 - (void)createFamilyAlbumCard{    
     NSLog(@"createFamilyAlbumCard");
-    AlbumType type = AlbumTypeFamily;
-    CardManager * cardManager = [CardManager defaultManager];
     
-    [cardManager newCardWithName:AlbumString(@"CardMama") inAlbum:type];
-    [cardManager newCardWithName:AlbumString(@"CardPapa") inAlbum:type];
-    [cardManager newCardWithName:AlbumString(@"CardLaolao") inAlbum:type];
-    [cardManager newCardWithName:AlbumString(@"CardLaoye") inAlbum:type];
-    [cardManager newCardWithName:AlbumString(@"CardNainai") inAlbum:type];
-    [cardManager newCardWithName:AlbumString(@"CardYeye") inAlbum:type];
+    NSArray * descriptions = [NSArray arrayWithObjects:
+                              [NSArray arrayWithObjects:@"姥爷", @"laoye", @"where_is_laoye", nil],
+                              [NSArray arrayWithObjects:@"姥姥", @"laolao", @"where_is_laolao", nil],
+                              [NSArray arrayWithObjects:@"爸爸", @"baba", @"where_is_baba", nil],
+                              [NSArray arrayWithObjects:@"妈妈", @"mama", @"where_is_mama", nil],
+                              [NSArray arrayWithObjects:@"爷爷", @"yeye", @"where_is_yeye", nil],
+                              [NSArray arrayWithObjects:@"奶奶", @"nainai", @"where_is_nainai", nil],nil];
+    
+    for (NSArray * singleDescription in descriptions) {
+        [self addCard:[singleDescription objectAtIndex:0]
+            withImage:[singleDescription objectAtIndex:1]
+            withSound:[singleDescription objectAtIndex:2]];
+    }
+
 }
 
 - (void)newAlbumWithName:(NSString *)name withType:(AlbumType)type{
